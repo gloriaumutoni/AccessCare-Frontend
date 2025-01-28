@@ -1,6 +1,10 @@
 import "./App.css"
-import Button from "./components/Button"
+import Navbar from "./components/Navbar"
 
 export default function App() {
-  return <Button className="px-6 py-1">Register</Button>
+  return (
+    <div className="w-7xl m-auto">
+      <Navbar />
+    </div>
+  )
 }
