@@ -1,3 +1,4 @@
+// import Button from "./Button"
 import Input from "./Input"
 
 function InputForm() {
@@ -21,6 +22,7 @@ function InputForm() {
         type="password"
         placeholder="xxxxxxxxxxx"
       />
+      {/* <Button className="w-3xs">Submit</Button> */}
     </form>
   )
 }
