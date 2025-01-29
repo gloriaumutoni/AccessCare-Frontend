@@ -2,7 +2,6 @@ import clsx from "clsx"
 import { ComponentProps } from "react"
 
 interface Props extends ComponentProps<"input"> {
-  placeholder: string
   label: string
 }
 
