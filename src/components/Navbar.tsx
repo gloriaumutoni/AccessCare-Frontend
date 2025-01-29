@@ -15,7 +15,7 @@ function Navbar() {
         <NavLink to="/track_health">Track your health</NavLink>
       </div>
       <div className="space-x-4">
-        <Button className="px-6 py-1 rounded-sm">Register</Button>
+        <Button className="px-6 py-1">Register</Button>
       </div>
     </nav>
   )
