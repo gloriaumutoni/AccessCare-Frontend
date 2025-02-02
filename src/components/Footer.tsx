@@ -2,7 +2,7 @@ import Logo from "./Logo"
 
 function Footer() {
   return (
-    <section className="text-white mt-4 bg-primary-400 p-8 divide-black absolute left-0 right-0 bottom-0">
+    <section className="text-white bg-primary-400 p-8 divide-black">
       <div className="w-7xl mx-auto flex justify-between py-4">
         <div>
           <Logo />
