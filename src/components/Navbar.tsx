@@ -4,9 +4,9 @@ import Logo from "./Logo"
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center py-4 ">
+    <nav className="flex justify-between items-center py-4">
       <Logo />
-      <div className="flex items-center space-x-4 ">
+      <div className="flex items-center space-x-4">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/services">Our Services</NavLink>
         <NavLink to="/jobs">Find Jobs</NavLink>
