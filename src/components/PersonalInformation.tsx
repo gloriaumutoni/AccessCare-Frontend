@@ -1,4 +1,5 @@
 import InputForm from "./InputForm"
+import RadioButtons from "./RadioButtons"
 
 function PersonalInformation() {
   return (
@@ -9,14 +10,7 @@ function PersonalInformation() {
         </p>
         <div className="flex gap-3">
           <p>Treatment Injuiry for</p>
-          <label>
-            <input type="radio" value="option1" name="options" />
-            MySelf
-          </label>
-          <label>
-            <input type="radio" value="option2" name="options" />
-            Someone
-          </label>
+          <RadioButtons />
         </div>
       </div>
       <InputForm />
