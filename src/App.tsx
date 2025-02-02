@@ -1,6 +1,7 @@
 import "./App.css"
 import AboutUs from "./components/AboutUs"
 import DoctorInformation from "./components/DoctorInformation"
+import DoctorsDetails from "./components/DoctorsDetails"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
@@ -13,8 +14,9 @@ export default function App() {
         <Navbar />
         <Header />
         <PersonalInformation />
-        <div>
+        <div className="flex gap-4">
           <DoctorInformation />
+          <DoctorsDetails />
         </div>
       </div>
       <AboutUs />
