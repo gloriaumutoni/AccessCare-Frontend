@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { ComponentProps } from "react"
 
 interface Props extends ComponentProps<"input"> {
-  label: string
+  label?: string
 }
 
 function Input({ label, placeholder, type, className }: Props) {
@@ -11,7 +11,7 @@ function Input({ label, placeholder, type, className }: Props) {
       <label>{label}</label>
       <input
         className={clsx(
-          "border rounded-xs bg-gray-100 py-1 border-primary-400 indent-3",
+          "border rounded-xs bg-gray-100 py-1 border-primary-400 indent-3 outline-none",
           className,
         )}
         type={type}

@@ -10,7 +10,7 @@ function PersonalInformation() {
         </p>
         <div className="flex gap-3">
           <p>Treatment Injuiry for</p>
-          <RadioButtons />
+          <RadioButtons label1="Myself" label2="Someone" />
         </div>
       </div>
       <InputForm />
