@@ -1,4 +1,4 @@
-import { doctorsDetails } from "./data/data"
+import { doctorsDetails } from "../data/data"
 import { IoChatbubblesOutline } from "react-icons/io5"
 
 function DoctorsDetails() {

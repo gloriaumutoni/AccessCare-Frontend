@@ -9,7 +9,7 @@ function Navbar() {
       <div className="flex items-center space-x-4">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/services">Our Services</NavLink>
-        <NavLink to="/jobs">Find Jobs</NavLink>
+        <NavLink to="/bookings">Find Doctors</NavLink>
         <NavLink to="/track_health">Track your health</NavLink>
       </div>
       <Button className="px-6 py-1">Register</Button>

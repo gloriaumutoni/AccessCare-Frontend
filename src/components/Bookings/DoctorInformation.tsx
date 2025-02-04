@@ -1,4 +1,4 @@
-import Button from "./Button"
+import Button from "../Button"
 import Input from "./Input"
 import { CiSearch } from "react-icons/ci"
 import RadioButtons from "./RadioButtons"
