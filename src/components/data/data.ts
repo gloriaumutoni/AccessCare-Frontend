@@ -77,4 +77,26 @@ export const doctorsDetails = [
     about:
       "Dr. Michael Smith is a Pediatrician in Huye with 5 years of experience. He has a rating of 4 with 80 reviews.",
   },
+  {
+    id: 8,
+    name: "Dr. Michael Smith",
+    specialization: "Pediatrician",
+    location: "Huye",
+    experience: "5 years",
+    rating: 4,
+    image: "/doctor (6).png",
+    about:
+      "Dr. Michael Smith is a Pediatrician in Huye with 5 years of experience. He has a rating of 4 with 80 reviews.",
+  },
+  {
+    id: 9,
+    name: "Dr. Michael Smith",
+    specialization: "Pediatrician",
+    location: "Huye",
+    experience: "5 years",
+    rating: 4,
+    image: "/doctor (6).png",
+    about:
+      "Dr. Michael Smith is a Pediatrician in Huye with 5 years of experience. He has a rating of 4 with 80 reviews.",
+  },
 ]
