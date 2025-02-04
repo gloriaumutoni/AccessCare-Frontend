@@ -5,7 +5,12 @@ type Props = PropsWithChildren & ComponentProps<"button">
 
 export default function Button({ className, children }: Props) {
   return (
-    <button className={clsx("bg-primary-400 rounded-sm text-white", className)}>
+    <button
+      className={clsx(
+        "bg-primary-400 rounded-sm cursor-pointer text-white",
+        className,
+      )}
+    >
       {children}
     </button>
   )
