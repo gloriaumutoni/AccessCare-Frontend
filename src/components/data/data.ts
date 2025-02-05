@@ -100,3 +100,30 @@ export const doctorsDetails = [
       "Dr. Michael Smith is a Pediatrician in Huye with 5 years of experience. He has a rating of 4 with 80 reviews.",
   },
 ]
+
+export const healthDetails = [
+  {
+    id: 1,
+    img: "/health (4).png",
+    color: "bg-orange-100",
+    description: "Privacy and Security",
+  },
+  {
+    id: 2,
+    img: "/health (3).png",
+    color: "bg-cyan-100",
+    description: "Online Specialist",
+  },
+  {
+    id: 3,
+    img: "/health (2).png",
+    color: "bg-yellow-50",
+    description: "Telemedicine",
+  },
+  {
+    id: 4,
+    img: "/health (1).png",
+    color: "bg-cyan-50",
+    description: "Remote monitoring",
+  },
+]
