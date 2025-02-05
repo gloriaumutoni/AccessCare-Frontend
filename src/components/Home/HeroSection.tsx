@@ -3,7 +3,7 @@ import AdditionalDetails from "./AdditionalDetails"
 
 function HeroSection() {
   return (
-    <div>
+    <>
       <div className="flex justify-between mt-12">
         <div className="w-sm space-y-8 mt-12">
           <h1 className="font-bold text-4xl">Your Health Comes First.</h1>
@@ -32,7 +32,7 @@ function HeroSection() {
         </div>
       </div>
       <AdditionalDetails />
-    </div>
+    </>
   )
 }
 
