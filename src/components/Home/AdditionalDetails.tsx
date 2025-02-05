@@ -2,8 +2,7 @@ import { LuClock4 } from "react-icons/lu"
 
 function AdditionalDetails() {
   return (
-    <div className="bg-primary-400 flex  gap-8 text-white p-12 mb-4">
-      {/* first */}
+    <div className="bg-primary-400 flex gap-8 text-white p-12">
       <div className="flex gap-3">
         <LuClock4 className="text-black text-7xl bg-white py-5" />
         <div className="space-y-2">
@@ -13,7 +12,6 @@ function AdditionalDetails() {
           </p>
         </div>
       </div>
-      {/* second */}
       <div className="flex gap-3">
         <img
           className="bg-white py-4 px-3"
@@ -24,11 +22,10 @@ function AdditionalDetails() {
           <h2 className="font-bold">Remote Patient monitoring</h2>
           <p>
             Get personalized remote monitoring ensuring continuous support
-            during challenging times{" "}
+            during challenging times
           </p>
         </div>
       </div>
-      {/* third */}
       <div className="flex gap-3">
         <img
           className="bg-white py-5 px-3"
