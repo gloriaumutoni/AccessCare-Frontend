@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar"
 function Home() {
   return (
     <>
-      <div className="w-7xl m-auto">
+      <div className="w-7xl mx-auto">
         <Navbar />
         <HeroSection />
         <Health />
