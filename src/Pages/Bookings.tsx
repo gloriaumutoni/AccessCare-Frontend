@@ -1,6 +1,6 @@
 import AboutUs from "../components/Bookings/AboutUs"
 import DoctorInformation from "../components/Bookings/DoctorInformation"
-import DoctorsDetails from "../components/Bookings/Cards"
+import DoctorsDetails from "../components/Cards/Cards"
 import Footer from "../components/Footer"
 import Header from "../components/Bookings/Header"
 import Navbar from "../components/Navbar"
