@@ -1,3 +1,4 @@
+import Consultation from "../components/Cards/Consultation"
 import Footer from "../components/Footer"
 import Health from "../components/Home/Health"
 import HeroSection from "../components/Home/HeroSection"
@@ -11,6 +12,7 @@ function Home() {
         <HeroSection />
         <Health />
       </div>
+      <Consultation />
       <Footer />
     </>
   )
