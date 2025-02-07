@@ -27,7 +27,7 @@ function Doctors() {
           </div>
         </div>
         <div className="flex justify-center">
-          <Button className=" py-3 px-6">View all Doctors</Button>
+          <Button className="rounded-sm py-3 px-6">View all Doctors</Button>
         </div>
       </div>
       <article>

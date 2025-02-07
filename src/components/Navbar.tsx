@@ -12,7 +12,7 @@ function Navbar() {
         <NavLink to="/bookings">Find Doctors</NavLink>
         <NavLink to="/track_health">Track your health</NavLink>
       </div>
-      <Button className="px-6 py-1">Register</Button>
+      <Button className="px-6 rounded-sm py-1">Register</Button>
     </nav>
   )
 }

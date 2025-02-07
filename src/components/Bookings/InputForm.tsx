@@ -22,7 +22,7 @@ function InputForm() {
         type="password"
         placeholder="xxxxxxx"
       />
-      <Button className="w-3xs h-10">Submit</Button>
+      <Button className="w-3xs rounded-sm h-10">Submit</Button>
     </form>
   )
 }

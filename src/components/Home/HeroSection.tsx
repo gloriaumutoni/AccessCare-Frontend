@@ -12,7 +12,7 @@ function HeroSection() {
             in your home. Our team of skilled medical professionals and aids
             ensure that you get the care you need and deserve.
           </p>
-          <Button className="w-3xs py-3">Consult Doctor</Button>
+          <Button className="rounded-sm w-3xs py-3">Consult Doctor</Button>
         </div>
         <div className="relative px-14">
           <img className="w-sm" src="/landing_page_nurse.png" alt="Nurse" />

@@ -10,7 +10,7 @@ function DoctorInformation() {
       <h2 className="font-medium text-md pb-1 mt-7">Search</h2>
       <div className="flex pb-4">
         <Input placeholder="Search doctor" className="w-3xs" />
-        <Button className="p-2 rounded-l-none">
+        <Button className="p-2 rounded-r-sm">
           <CiSearch />
         </Button>
       </div>
@@ -25,7 +25,7 @@ function DoctorInformation() {
         <option>NDERA HOSPITAL</option>
         <option>MASAKA HOSPITAL</option>
       </select>
-      <Button className="px-6 py-2 self-center">Show Doctor</Button>
+      <Button className="px-6 py-2 rounded-sm self-center">Show Doctor</Button>
     </div>
   )
 }

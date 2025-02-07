@@ -6,10 +6,7 @@ type Props = PropsWithChildren & ComponentProps<"button">
 export default function Button({ className, children }: Props) {
   return (
     <button
-      className={clsx(
-        "bg-primary-400 rounded-sm cursor-pointer text-white",
-        className,
-      )}
+      className={clsx("bg-primary-400 cursor-pointer text-white", className)}
     >
       {children}
     </button>
