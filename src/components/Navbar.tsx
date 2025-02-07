@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="flex justify-between items-center py-4">
       <Logo />
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center gap-6">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/services">Our Services</NavLink>
         <NavLink to="/bookings">Find Doctors</NavLink>
