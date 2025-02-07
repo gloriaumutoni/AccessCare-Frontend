@@ -1,3 +1,5 @@
+import { departments, quickLinks } from "./data/data"
+import List from "./List"
 import Logo from "./Logo"
 
 function Footer() {
@@ -10,26 +12,14 @@ function Footer() {
             Where Health is Priority. Empowering Connections, Monitoring Health
             Remotely, and Ensuring Quality Care Every Step of the Way.
           </p>
+          <article className="flex gap-2 py-2">
+            <img src="/facebook (2).png" alt="facebook" />
+            <img src="/skype.png" alt="skype" />
+            <img src="/twitter.png" alt="twitter" />
+          </article>
         </div>
-        <div>
-          <h2 className="text-xl font-bold py-3">Departments</h2>
-          <ul className="space-y-2">
-            <li>Family Medecine</li>
-            <li>Women's health</li>
-            <li>Optician</li>
-            <li>Pediatrics</li>
-            <li>Dermetology</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-xl font-bold py-3">Quick links</h2>
-          <ul className="space-y-2">
-            <li>Our Doctors</li>
-            <li>Apointment</li>
-            <li>Blog Post</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
+        <List list={departments} title="Departments" />
+        <List list={quickLinks} title="Quick Links" />
         <div className="w-3xs">
           <h2 className="text-xl font-bold py-3">Blog Post</h2>
           <article className="space-y-2">
