@@ -1,10 +1,18 @@
-import { doctorsDetails } from "./data/data"
 import { IoChatbubblesOutline } from "react-icons/io5"
 
-function DoctorsDetails() {
+interface Props {
+  details: {
+    id: number
+    name: string
+    specialization: string
+    image: string
+  }[]
+}
+
+function DoctorsDetails({ details }: Props) {
   return (
     <div className="grid grid-cols-3 gap-3 mt-8">
-      {doctorsDetails.map((doctor) => (
+      {details.map((doctor) => (
         <div
           key={doctor.id}
           className="text-primary-400 text-center space-y-3 my-4"

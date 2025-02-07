@@ -1,9 +1,9 @@
-// import Button from "./Button"
+import Button from "../Button"
 import Input from "./Input"
 
 function InputForm() {
   return (
-    <form className="flex gap-3 border-primary-400">
+    <form className="flex gap-3 items-end border-primary-400">
       <Input
         label="Name"
         className="w-3xs"
@@ -20,9 +20,9 @@ function InputForm() {
         label="Password"
         className="w-3xs"
         type="password"
-        placeholder="xxxxxxxxxxx"
+        placeholder="xxxxxxx"
       />
-      {/* <Button className="w-3xs">Submit</Button> */}
+      <Button className="w-3xs rounded-sm h-10">Submit</Button>
     </form>
   )
 }

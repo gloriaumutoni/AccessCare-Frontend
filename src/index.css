@@ -2,4 +2,6 @@
 
 @theme {
   --color-primary-400: oklch(0.609 0.126 221.723);
+  --color-primary-500: rgb(27, 60, 116);
+  --color-secondary: rgb(235, 243, 255);
 }
