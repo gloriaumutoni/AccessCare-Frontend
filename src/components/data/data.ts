@@ -82,3 +82,17 @@ export const healthDetails = [
     description: "Remote monitoring",
   },
 ]
+
+export const quickLinks = [
+  "Our Doctors",
+  "Apointment",
+  "Blog Post",
+  "Contact Us",
+]
+
+export const departments = [
+  "Family Medecine",
+  "Pediatrician",
+  "General Practitioner",
+  "Obstetrician",
+]
