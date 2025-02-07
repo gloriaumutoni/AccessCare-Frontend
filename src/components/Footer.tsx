@@ -13,7 +13,7 @@ function Footer() {
         </div>
         <div>
           <h2 className="text-xl font-bold py-3">Departments</h2>
-          <ul>
+          <ul className="space-y-2">
             <li>Family Medecine</li>
             <li>Women's health</li>
             <li>Optician</li>
@@ -23,7 +23,7 @@ function Footer() {
         </div>
         <div>
           <h2 className="text-xl font-bold py-3">Quick links</h2>
-          <ul>
+          <ul className="space-y-2">
             <li>Our Doctors</li>
             <li>Apointment</li>
             <li>Blog Post</li>
@@ -32,10 +32,14 @@ function Footer() {
         </div>
         <div className="w-3xs">
           <h2 className="text-xl font-bold py-3">Blog Post</h2>
-          <p className="text-black">22.05.2024</p>
-          <p>The Benefits of Remote Monitoring and patient care</p>
-          <p className="text-black">22.05.2024</p>
-          <p>Health Tracker benefits where your health is in your hands</p>
+          <article className="space-y-2">
+            <p className="text-black">22.05.2024</p>
+            <p>The Benefits of Remote Monitoring and patient care</p>
+          </article>
+          <article className="space-y-2 pt-2">
+            <p className="text-black">22.05.2024</p>
+            <p>Health Tracker benefits where your health is in your hands</p>
+          </article>
         </div>
       </div>
       <div className="border-t  border-black my-4"></div>
