@@ -1,5 +1,5 @@
-import clsx from "clsx"
 import { healthDetails } from "../data/data"
+import ServiceTypes from "../ServiceTypes"
 
 function Health() {
   return (
@@ -14,20 +14,7 @@ function Health() {
             get the care you need and deserve.
           </p>
         </div>
-        <div className="flex justify-between">
-          {healthDetails.map((details) => (
-            <div
-              key={details.id}
-              className={clsx(
-                "space-y-3 font-medium w-3xs p-12 flex flex-col items-center",
-                details.color,
-              )}
-            >
-              <img className="flex-grow" src={details.img} alt={details.img} />
-              <p>{details.description}</p>
-            </div>
-          ))}
-        </div>
+        <ServiceTypes healthDetails={healthDetails} />
         <img
           className="w-sm absolute top-0 left-[10%]"
           src="/public/Group 1000011082.png"
