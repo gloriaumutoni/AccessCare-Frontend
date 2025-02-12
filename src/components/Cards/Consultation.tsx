@@ -1,8 +1,11 @@
+import PatientGoal from "../PatientGoal"
+
 const details = [
   "Stay Updated About Your Health",
   "Check Your Results Online",
   "Manage Your Appointments",
 ]
+
 function Consultation() {
   return (
     <section className="bg-secondary py-28">
@@ -30,14 +33,7 @@ function Consultation() {
             and compassionate manner. We hope you will allow us to care for you
             and strive to be the first and best choice for healthcare.
           </p>
-          <div className="space-y-5">
-            {details.map((detail) => (
-              <div key={detail} className="flex gap-5 text-primary-500">
-                <img className="w-6" src="/star.png" alt="star" />
-                <p>{detail}</p>
-              </div>
-            ))}
-          </div>
+          <PatientGoal details={details} />
         </div>
       </div>
     </section>
