@@ -9,7 +9,7 @@ function Login() {
         <img src="/equipments.png" alt="Doctors equipments" />
       </div>
       <div>
-        <Logo className="" />
+        <Logo className="absolute right-12" />
         <h2 className="font-bold ">Welcome back!</h2>
         <p>Enter your Credentials to access your account</p>
         <Input
