@@ -96,3 +96,29 @@ export const departments = [
   "General Practitioner",
   "Obstetrician",
 ]
+
+export const services = [
+  {
+    id: 1,
+    title: "24 hours services",
+    description:
+      "Get 24/7 expert medical support ensuring your needs are always met",
+    src: "/public/Clock.png",
+    alt: "clock",
+  },
+  {
+    id: 2,
+    title: "Remote Patient monitoring",
+    description:
+      "Get personalized remote monitoring ensuring continuous support during challenging times",
+    src: "/public/bi_clipboard2-plus.png",
+    alt: "bi_clipboard2-plus",
+  },
+  {
+    id: 3,
+    title: "High quality care",
+    description: "Delivering high-quality care tailored to your needs",
+    src: "/public/Group.png",
+    alt: "health",
+  },
+]
