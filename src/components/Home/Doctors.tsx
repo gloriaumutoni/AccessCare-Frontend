@@ -2,7 +2,7 @@ import Button from "../Button"
 
 function Doctors() {
   return (
-    <section className="flex justify-between py-24 w-7xl mx-auto">
+    <section className="flex justify-between py-24 max-w-6xl mx-auto">
       <div className="w-sm space-y-8">
         <article>
           <p className="font-medium text-lg">Our Doctors</p>
@@ -32,7 +32,7 @@ function Doctors() {
       </div>
       <article>
         <img
-          className="w-sm"
+          className="w-md"
           src="/qualified doctors.png"
           alt="qualified doctors"
         />
