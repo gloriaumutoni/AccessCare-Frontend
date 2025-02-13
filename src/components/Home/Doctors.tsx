@@ -32,7 +32,7 @@ function Doctors() {
       </div>
       <article>
         <img
-          className="w-sm"
+          className="w-md"
           src="/qualified doctors.png"
           alt="qualified doctors"
         />
