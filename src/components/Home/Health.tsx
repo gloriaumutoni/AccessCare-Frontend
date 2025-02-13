@@ -16,7 +16,7 @@ function Health() {
         </div>
         <ServiceTypes healthDetails={healthDetails} />
         <img
-          className="w-sm absolute top-0 left-[10%]"
+          className="w-sm absolute top-0 left-[18%]"
           src="/public/Group 1000011082.png"
           alt="health"
         />
