@@ -5,7 +5,7 @@ import { PATHS } from "../routes/constants"
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center py-4">
+    <nav className="max-w-7xl mx-auto flex justify-between items-center py-4">
       <Logo />
       <div className="flex items-center gap-6">
         <NavLink to={PATHS.home}>Home</NavLink>

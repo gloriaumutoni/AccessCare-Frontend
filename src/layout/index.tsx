@@ -5,10 +5,8 @@ import Footer from "../components/Footer"
 function Layout() {
   return (
     <>
-      <div className="max-w-7xl mx-auto">
-        <Navbar />
-        <Outlet />
-      </div>
+      <Navbar />
+      <Outlet />
       <Footer />
     </>
   )
