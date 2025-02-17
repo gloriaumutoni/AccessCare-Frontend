@@ -1,20 +1,21 @@
 import { createBrowserRouter } from "react-router"
-import Home from "../Pages/Home"
-import Bookings from "../Pages/Bookings"
-import Login from "../Pages/Login"
-import NotFound from "../Pages/404"
+import Home from "../pages/Home"
+import Bookings from "../pages/Bookings"
+import Login from "../pages/Login"
+import NotFound from "../pages/404"
 import Layout from "../layout"
+import { PATHS } from "./constants"
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: PATHS.home,
     element: <Layout />,
     children: [
       { index: true, element: <Home />, errorElement: <NotFound /> },
-      { path: "/bookings", element: <Bookings /> },
+      { path: PATHS.bookings, element: <Bookings /> },
     ],
   },
-  { path: "/login", element: <Login /> },
+  { path: PATHS.login, element: <Login /> },
 ])
 
 export default router
