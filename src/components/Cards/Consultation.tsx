@@ -1,4 +1,3 @@
-import Button from "../Button"
 import PatientGoal from "../PatientGoal"
 
 const details = [
@@ -11,13 +10,16 @@ function Consultation() {
   return (
     <section className="bg-secondary py-28">
       <div className="flex justify-between w-7xl mx-auto">
-        <Button
-          buttonType
-          title="Free consultation"
-          text="Consultation with the best"
-          imgSrc="/Frame.png"
-          alt="Phone"
-        />
+        <button className="flex items-center cursor-pointer">
+          <div className="p-3 rounded-lg bg-white w-2xs shadow-gray-500 shadow-2xs">
+            <div className="flex">
+              <img src="/Frame.png" alt="Phone" />
+              <h1 className="text-md font-bold">Free consultation</h1>
+            </div>
+            <p>Consultation with the best</p>
+          </div>
+        </button>
+
         <div className="w-xl space-y-8">
           <div className="space-y-3">
             <p className="text-primary-400 text-l font-medium">
