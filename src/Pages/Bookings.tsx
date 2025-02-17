@@ -1,8 +1,8 @@
-import AboutUs from "../components/Bookings/AboutUs"
-import DoctorInformation from "../components/Bookings/DoctorInformation"
-import DoctorsDetails from "../components/Cards/Cards"
-import Header from "../components/Bookings/Header"
-import PersonalInformation from "../components/Bookings/PersonalInformation"
+import AboutUs from "../components/bookings/AboutUs"
+import DoctorInformation from "../components/bookings/DoctorInformation"
+import DoctorsDetails from "../components/cards/Cards"
+import Header from "../components/bookings/Header"
+import PersonalInformation from "../components/bookings/PersonalInformation"
 import { doctorsDetails } from "../components/data/data"
 
 function Bookings() {

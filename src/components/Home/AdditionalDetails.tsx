@@ -1,4 +1,4 @@
-import ServiceDetails from "../Cards/ServiceDetails"
+import ServiceDetails from "../cards/ServiceDetails"
 import { services } from "../data/data"
 
 function AdditionalDetails() {

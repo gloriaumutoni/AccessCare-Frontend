@@ -1,4 +1,4 @@
-import Input from "../components/Bookings/Input"
+import Input from "../components/bookings/Input"
 import Button from "../components/Button"
 import Logo from "../components/Logo"
 

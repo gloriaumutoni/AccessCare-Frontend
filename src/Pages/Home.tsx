@@ -1,7 +1,7 @@
-import Consultation from "../components/Cards/Consultation"
-import Doctors from "../components/Home/Doctors"
-import Health from "../components/Home/Health"
-import HeroSection from "../components/Home/HeroSection"
+import Consultation from "../components/cards/Consultation"
+import Doctors from "../components/home/Doctors"
+import Health from "../components/home/Health"
+import HeroSection from "../components/home/HeroSection"
 
 function Home() {
   return (
