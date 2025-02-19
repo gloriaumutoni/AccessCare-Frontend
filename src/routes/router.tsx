@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router"
 import Home from "../pages/Home"
 import Bookings from "../pages/Bookings"
-import Login from "../pages/Login"
 import NotFound from "../pages/404"
 import Layout from "../layout"
 import { PATHS } from "./constants"
+import LogIn from "../pages/Login"
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       { path: PATHS.bookings, element: <Bookings /> },
     ],
   },
-  { path: PATHS.login, element: <Login /> },
+  { path: PATHS.logIn, element: <LogIn /> },
 ])
 
 export default router
