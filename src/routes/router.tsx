@@ -5,6 +5,7 @@ import NotFound from "../pages/404"
 import Layout from "../layout"
 import { PATHS } from "./constants"
 import LogIn from "../pages/Login"
+import SignUp from "../pages/SignUp"
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: PATHS.bookings, element: <Bookings /> },
     ],
   },
+  { path: PATHS.SignUp, element: <SignUp /> },
   { path: PATHS.logIn, element: <LogIn /> },
 ])
 
