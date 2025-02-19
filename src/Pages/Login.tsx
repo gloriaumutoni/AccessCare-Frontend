@@ -2,7 +2,7 @@ import Input from "../components/bookings/Input"
 import Button from "../components/Button"
 import Logo from "../components/Logo"
 
-function Login() {
+function LogIn() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="p-8 rounded-2xl shadow-2xl">
@@ -37,4 +37,4 @@ function Login() {
   )
 }
 
-export default Login
+export default LogIn
