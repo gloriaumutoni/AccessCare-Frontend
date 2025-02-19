@@ -29,7 +29,7 @@ function Login() {
             className="rounded-md w-xs"
           />
           <div className="flex justify-center">
-            <Button className="w-3xs rounded-lg mt-3 py-1">Login</Button>
+            <Button className="w-3xs rounded-lg mt-3 py-1">SignUp</Button>
           </div>
         </div>
       </div>
