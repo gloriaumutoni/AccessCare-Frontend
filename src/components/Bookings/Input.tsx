@@ -11,7 +11,7 @@ function Input({ label, placeholder, type, className }: Props) {
       <label>{label}</label>
       <input
         className={clsx(
-          "border rounded-xs bg-gray-100 py-1 border-primary-400 indent-3 outline-none",
+          "border bg-gray-100 py-1 border-primary-400 indent-3 outline-none",
           className,
         )}
         type={type}
