@@ -1,4 +1,4 @@
-import { departments, quickLinks } from "./data/data"
+import { departments, quickLinks } from "../data/data"
 import List from "./List"
 import Logo from "./Logo"
 

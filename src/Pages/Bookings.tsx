@@ -3,7 +3,7 @@ import DoctorInformation from "../components/bookings/DoctorInformation"
 import DoctorsDetails from "../components/cards/Cards"
 import Header from "../components/bookings/Header"
 import PersonalInformation from "../components/bookings/PersonalInformation"
-import { doctorsDetails } from "../components/data/data"
+import { doctorsDetails } from "../data/data"
 
 function Bookings() {
   return (

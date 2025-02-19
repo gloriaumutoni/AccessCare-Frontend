@@ -1,4 +1,4 @@
-import { healthDetails } from "../data/data"
+import { healthDetails } from "../../data/data"
 import ServiceTypes from "../ServiceTypes"
 
 function Health() {

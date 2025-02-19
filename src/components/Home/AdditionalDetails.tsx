@@ -1,5 +1,5 @@
 import ServiceDetails from "../cards/ServiceDetails"
-import { services } from "../data/data"
+import { services } from "../../data/data"
 
 function AdditionalDetails() {
   return (
