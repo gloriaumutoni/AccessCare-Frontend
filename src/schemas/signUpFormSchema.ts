@@ -1,7 +1,6 @@
-import z, { ZodType } from "zod"
-import { FormType } from "../pages/SignUp"
+import { z } from "zod"
 
-const signUpFormSchema: ZodType<FormType> = z
+const signUpFormSchema = z
   .object({
     username: z.string().min(3).max(30),
     email: z.string().email(),

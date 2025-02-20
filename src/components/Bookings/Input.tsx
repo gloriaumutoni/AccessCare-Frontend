@@ -1,11 +1,21 @@
 import clsx from "clsx"
 import { ComponentProps } from "react"
+import { UseFormRegisterReturn } from "react-hook-form"
 
 interface Props extends ComponentProps<"input"> {
   label?: string
+  register?: UseFormRegisterReturn
+  errorMessage?: string
 }
 
-function Input({ label, placeholder, type, className }: Props) {
+function Input({
+  label,
+  placeholder,
+  type,
+  className,
+  register,
+  errorMessage,
+}: Props) {
   return (
     <div className="flex flex-col">
       <label>{label}</label>
@@ -16,7 +26,9 @@ function Input({ label, placeholder, type, className }: Props) {
         )}
         type={type}
         placeholder={placeholder}
+        {...register}
       />
+      {errorMessage && <span className="text-red-600">{errorMessage}</span>}
     </div>
   )
 }
