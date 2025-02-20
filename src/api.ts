@@ -4,3 +4,7 @@ export type SignUpFormType = {
   password: string
   comfirmPassword: string
 }
+export type LogInFormType = {
+  email: string
+  password: string
+}
