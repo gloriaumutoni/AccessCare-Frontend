@@ -1,6 +1,4 @@
 import { Link } from "react-router"
-import Input from "../components/bookings/Input"
-import Button from "../components/Button"
 import Logo from "../components/Logo"
 import { PATHS } from "../routes/constants"
 import { FormProvider, useForm } from "react-hook-form"
