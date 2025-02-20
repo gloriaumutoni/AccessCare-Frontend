@@ -1,6 +1,7 @@
-import z from "zod"
+import z, { ZodType } from "zod"
+import { FormType } from "../pages/SignUp"
 
-const formSchema = z
+const signUpFormSchema: ZodType<FormType> = z
   .object({
     username: z.string().min(3).max(30),
     email: z.string().email(),
@@ -12,4 +13,4 @@ const formSchema = z
     path: ["comfirmPassword"],
   })
 
-export default formSchema
+export default signUpFormSchema
