@@ -3,7 +3,7 @@ import Input from "../components/bookings/Input"
 import Button from "../components/Button"
 import Logo from "../components/Logo"
 import { zodResolver } from "@hookform/resolvers/zod"
-import signUpFormSchema from "../schemas/signupFormSchema"
+import signUpFormSchema from "../schemas/signUpFormSchema"
 
 export type FormType = {
   username: string
