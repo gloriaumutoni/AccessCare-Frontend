@@ -11,7 +11,7 @@ interface Props {
 
 function DoctorsDetails({ details }: Props) {
   return (
-    <div className="grid grid-cols-3 gap-3 mt-8">
+    <div className="grid grid-cols-3 gap-3">
       {details.map((doctor) => (
         <div
           key={doctor.id}

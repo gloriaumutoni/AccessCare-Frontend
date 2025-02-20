@@ -1,4 +1,3 @@
-import InputForm from "./InputForm"
 import RadioButtons from "./RadioButtons"
 
 function PersonalInformation() {
@@ -13,7 +12,6 @@ function PersonalInformation() {
           <RadioButtons label1="Myself" label2="Someone" />
         </div>
       </div>
-      <InputForm />
     </div>
   )
 }

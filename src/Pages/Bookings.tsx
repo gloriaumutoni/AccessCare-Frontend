@@ -2,7 +2,6 @@ import AboutUs from "../components/bookings/AboutUs"
 import DoctorInformation from "../components/bookings/DoctorInformation"
 import DoctorsDetails from "../components/cards/Cards"
 import Header from "../components/bookings/Header"
-import PersonalInformation from "../components/bookings/PersonalInformation"
 import { doctorsDetails } from "../data/data"
 
 function Bookings() {
@@ -10,7 +9,6 @@ function Bookings() {
     <>
       <div className="w-7xl m-auto">
         <Header />
-        <PersonalInformation />
         <div className="flex gap-4">
           <DoctorInformation />
           <DoctorsDetails details={doctorsDetails} />
