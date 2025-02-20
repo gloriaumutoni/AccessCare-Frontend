@@ -13,7 +13,7 @@ function SignUp() {
         </div>
         <div className="space-y-4">
           <Input
-            label="Full Name"
+            label="Username"
             placeholder="Enter your name"
             className="rounded-md w-xs"
           />
@@ -24,6 +24,12 @@ function SignUp() {
           />
           <Input
             label="Password"
+            placeholder="******"
+            type="password"
+            className="rounded-md w-xs"
+          />
+          <Input
+            label="Comfirm Password"
             placeholder="******"
             type="password"
             className="rounded-md w-xs"
