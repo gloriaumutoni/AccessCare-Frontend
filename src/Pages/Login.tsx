@@ -29,7 +29,7 @@ function LogIn() {
         </div>
         <p className="text-gray-400 py-3 text-center">
           Don't have an account?
-          <Link className="text-black pl-2" to={PATHS.SignUp}>
+          <Link className="text-black pl-2" to={PATHS.SIGNUP}>
             SignUp
           </Link>
         </p>

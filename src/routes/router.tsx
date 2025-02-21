@@ -10,16 +10,16 @@ import Dashboard from "../pages/Dashboard"
 
 const router = createBrowserRouter([
   {
-    path: PATHS.home,
+    path: PATHS.HOME,
     element: <Layout />,
     children: [
       { index: true, element: <Home />, errorElement: <NotFound /> },
-      { path: PATHS.bookings, element: <Bookings /> },
+      { path: PATHS.BOOKINGS, element: <Bookings /> },
     ],
   },
-  { path: PATHS.SignUp, element: <SignUp /> },
-  { path: PATHS.logIn, element: <LogIn /> },
-  { path: PATHS.dashboard, element: <Dashboard /> },
+  { path: PATHS.SIGNUP, element: <SignUp /> },
+  { path: PATHS.LOGIN, element: <LogIn /> },
+  { path: PATHS.DASHBOARD.ROOT, element: <Dashboard /> },
 ])
 
 export default router
