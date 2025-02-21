@@ -4,25 +4,26 @@ import { FaHome, FaUser } from "react-icons/fa"
 import { FaUserDoctor } from "react-icons/fa6"
 import { IoLogOutOutline } from "react-icons/io5"
 import SidebarLink from "./SidebarLink"
+import { PATHS } from "../../routes/constants"
 
 const sidebarLinks = [
   {
-    path: "/",
+    path: PATHS.DASHBOARD.ROOT,
     text: "Home",
     element: <FaHome />,
   },
   {
-    path: "/doctors",
+    path: PATHS.DASHBOARD.DOCTORS,
     text: "Doctors",
     element: <FaUserDoctor />,
   },
   {
-    path: "/users",
+    path: PATHS.DASHBOARD.ROOT,
     text: "Users",
     element: <FaUser />,
   },
   {
-    path: "/logout",
+    path: "",
     text: "Logout",
     element: <IoLogOutOutline />,
   },

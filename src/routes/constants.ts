@@ -1,8 +1,12 @@
 export const PATHS = {
-  home: "/",
-  bookings: "/bookings",
-  services: "/services",
-  logIn: "/logIn",
-  SignUp: "/SignUp",
-  dashboard: "/dashboard",
+  HOME: "/",
+  BOOKINGS: "/bookings",
+  SERVICES: "/services",
+  LOGIN: "/logIn",
+  SIGNUP: "/SignUp",
+  DASHBOARD: {
+    ROOT: "/dashboard",
+    DOCTORS: "/dashboard/doctors",
+    USERS: "/dashboard/users",
+  },
 }
