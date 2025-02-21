@@ -2,6 +2,8 @@ import { useFormContext } from "react-hook-form"
 import Input from "../bookings/Input"
 import Button from "../Button"
 import { SignUpFormType } from "../../api"
+import { apiClient } from "../../api/auth"
+import { useNavigate } from "react-router"
 
 function SignUpForm() {
   const {
@@ -9,9 +11,19 @@ function SignUpForm() {
     handleSubmit,
     formState: { errors },
   } = useFormContext<SignUpFormType>()
+
+  const navigate = useNavigate()
+
   const SubmitData = (data: SignUpFormType) => {
-    console.log(data)
+    apiClient
+      .post("/users/signup", data)
+      .then((response) => {
+        console.log(response.data)
+        navigate("/login")
+      })
+      .catch((err) => console.log(err.message))
   }
+
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
       <Input
