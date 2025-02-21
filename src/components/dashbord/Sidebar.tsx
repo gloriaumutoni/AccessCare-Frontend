@@ -31,10 +31,10 @@ const sidebarLinks = [
 
 function Sidebar() {
   return (
-    <section className="bg-primary-400 max-w-2xs text-white flex flex-col h-screen text-lg space-y-3 px-6 py-3">
+    <section className="bg-primary-400 text-white flex flex-col h-screen text-lg space-y-3 px-8 py-3">
       <Logo />
       <hr />
-      <div className="flex flex-col space-y-3 pr-5">
+      <div className="flex flex-col space-y-3">
         {sidebarLinks.map((links) => (
           <SidebarLink key={links.path}>
             <Link to={links.path}>{links.text}</Link>
