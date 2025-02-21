@@ -6,6 +6,7 @@ import Layout from "../layout"
 import { PATHS } from "./constants"
 import LogIn from "../pages/Login"
 import SignUp from "../pages/SignUp"
+import Dashboard from "../pages/Dashboard"
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   },
   { path: PATHS.SignUp, element: <SignUp /> },
   { path: PATHS.logIn, element: <LogIn /> },
+  { path: PATHS.dashboard, element: <Dashboard /> },
 ])
 
 export default router
