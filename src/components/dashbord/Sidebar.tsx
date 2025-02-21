@@ -31,7 +31,7 @@ const sidebarLinks = [
 
 function Sidebar() {
   return (
-    <section className="bg-primary-400 text-white flex flex-col h-screen text-lg space-y-3 px-8 py-3">
+    <section className="bg-primary-400 text-white flex flex-col w-3xs h-screen text-lg space-y-3 px-8 py-3">
       <Logo />
       <hr />
       <div className="flex flex-col space-y-3">
