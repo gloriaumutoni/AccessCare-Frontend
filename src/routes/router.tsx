@@ -6,7 +6,8 @@ import Layout from "../layout"
 import { PATHS } from "./constants"
 import LogIn from "../pages/Login"
 import SignUp from "../pages/SignUp"
-import Dashboard from "../pages/Dashboard"
+import DashboardContent from "../components/dashboard"
+import AdminDashboard from "../pages/AdminDashboard"
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
   },
   { path: PATHS.SIGNUP, element: <SignUp /> },
   { path: PATHS.LOGIN, element: <LogIn /> },
-  { path: PATHS.DASHBOARD.ROOT, element: <Dashboard /> },
+  {
+    path: PATHS.DASHBOARD.ROOT,
+    element: <AdminDashboard />,
+    children: [{ index: true, element: <DashboardContent /> }],
+  },
 ])
 
 export default router
