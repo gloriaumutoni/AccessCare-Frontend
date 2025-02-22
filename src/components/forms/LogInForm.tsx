@@ -3,7 +3,6 @@ import { LogInFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
 import { apiClient } from "../../api/auth"
-import { useNavigate } from "react-router"
 
 function LogInForm() {
   const {
@@ -11,13 +10,11 @@ function LogInForm() {
     handleSubmit,
     formState: { errors },
   } = useFormContext<LogInFormType>()
-  const navigate = useNavigate()
   const SubmitData = (data: LogInFormType) => {
     apiClient
       .post("/users/login", data)
       .then((response) => {
         console.log(response.data)
-        navigate("/dashboard")
       })
       .catch((err) => console.log(err.message))
   }
