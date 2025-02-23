@@ -12,12 +12,13 @@ function LogInForm() {
   } = useFormContext<LogInFormType>()
   const SubmitData = (data: LogInFormType) => {
     apiClient
-      .post("/users/login", data)
+      .post("/auth/login", data)
       .then((response) => {
-        console.log(response.data)
+        localStorage.setItem("token", response.data.access_token)
       })
       .catch((err) => console.log(err.message))
   }
+
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
       <Input

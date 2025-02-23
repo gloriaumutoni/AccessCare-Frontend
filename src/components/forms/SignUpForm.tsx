@@ -14,11 +14,11 @@ function SignUpForm() {
 
   const navigate = useNavigate()
 
-  const SubmitData = (data: SignUpFormType) => {
+  const SubmitData = (formData: SignUpFormType) => {
+    const { comfirmPassword, ...data } = formData
     apiClient
-      .post("/users/signup", data)
-      .then((response) => {
-        console.log(response.data)
+      .post("/auth/signup", data)
+      .then(() => {
         navigate("/login")
       })
       .catch((err) => console.log(err.message))
