@@ -3,8 +3,10 @@ import { LogInFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
 import { apiClient } from "../../api/auth"
+import { useNavigate } from "react-router"
 
 function LogInForm() {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -37,7 +39,14 @@ function LogInForm() {
         errorMessage={errors.password?.message}
       />
       <div className="flex justify-center">
-        <Button className="w-xs rounded-lg mt-3 py-2">LogIn</Button>
+        <Button
+          onClick={() => {
+            navigate("/dashboard")
+          }}
+          className="w-xs rounded-lg mt-3 py-2"
+        >
+          LogIn
+        </Button>
       </div>
     </form>
   )
