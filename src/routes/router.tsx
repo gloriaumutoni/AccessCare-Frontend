@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp"
 import DashboardContent from "../components/dashboard"
 import AdminDashboard from "../pages/AdminDashboard"
 import ProtectedRoutes from "./protected"
+import DoctorsContent from "../components/dashboard/DoctorsContent"
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,13 @@ const router = createBrowserRouter([
       {
         path: PATHS.DASHBOARD.ROOT,
         element: <AdminDashboard />,
-        children: [{ index: true, element: <DashboardContent /> }],
+        children: [
+          { index: true, element: <DashboardContent /> },
+          {
+            path: PATHS.DASHBOARD.DOCTORS,
+            element: <DoctorsContent />,
+          },
+        ],
       },
     ],
   },
