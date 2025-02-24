@@ -31,14 +31,6 @@ function AppointmentForm() {
       <Input
         label="Date"
         placeholder="Enter Date"
-        type="password"
-        className="rounded-md w-xs"
-        register={register("date")}
-        errorMessage={errors.date?.message}
-      />
-      <Input
-        label="Date"
-        placeholder="Enter Date"
         type="date"
         className="rounded-md w-xs"
         register={register("date")}
