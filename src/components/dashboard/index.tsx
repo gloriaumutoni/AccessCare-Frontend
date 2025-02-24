@@ -1,3 +1,4 @@
+import BarChart from "../BarChart"
 import DashboardCard from "./Card"
 
 function DashboardContent() {
@@ -23,6 +24,9 @@ function DashboardContent() {
           className="bg-yellow-100"
           LinkColor="text-yellow-500"
         />
+      </div>
+      <div className="shadow-lg mt-20">
+        <BarChart />
       </div>
     </div>
   )

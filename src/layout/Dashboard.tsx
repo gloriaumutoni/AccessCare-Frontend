@@ -3,7 +3,7 @@ import Sidebar from "../components/dashboard/Sidebar"
 
 function DashboardLayout() {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-12">
       <Sidebar />
       <Outlet />
     </div>
