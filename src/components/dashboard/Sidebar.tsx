@@ -1,31 +1,22 @@
 import { Link, useNavigate } from "react-router"
 import Logo from "../Logo"
-import { FaHome, FaUser } from "react-icons/fa"
-import { FaUserDoctor } from "react-icons/fa6"
 import { IoLogOutOutline } from "react-icons/io5"
 import SidebarLink from "./SidebarLink"
 import { PATHS } from "../../routes/constants"
 import Button from "../Button"
+import { ReactNode } from "react"
 
-const sidebarLinks = [
-  {
-    path: PATHS.DASHBOARD.ROOT,
-    text: "Home",
-    element: <FaHome />,
-  },
-  {
-    path: PATHS.DASHBOARD.DOCTORS,
-    text: "Doctors",
-    element: <FaUserDoctor />,
-  },
-  {
-    path: PATHS.DASHBOARD.ROOT,
-    text: "Users",
-    element: <FaUser />,
-  },
-]
+interface Props {
+  path: string
+  text: string
+  element: ReactNode
+}
 
-function Sidebar() {
+interface sidebarLinks {
+  links: Props[]
+}
+
+function Sidebar({ links }: sidebarLinks) {
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -37,10 +28,10 @@ function Sidebar() {
       <Logo />
       <hr />
       <div className="flex flex-col space-y-3">
-        {sidebarLinks.map((links) => (
-          <SidebarLink key={links.path}>
-            <Link to={links.path}>{links.text}</Link>
-            {links.element}
+        {links.map((link) => (
+          <SidebarLink key={link.path}>
+            <Link to={link.path}>{link.text}</Link>
+            {link.element}
           </SidebarLink>
         ))}
         <Button

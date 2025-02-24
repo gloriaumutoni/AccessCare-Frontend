@@ -10,6 +10,7 @@ import DashboardContent from "../components/dashboard"
 import AdminDashboard from "../pages/AdminDashboard"
 import ProtectedRoutes from "./protected"
 import DoctorsContent from "../components/dashboard/DoctorsContent"
+import PatientDashboard from "../components/dashboard/patient"
 
 const router = createBrowserRouter([
   {
@@ -26,17 +27,21 @@ const router = createBrowserRouter([
     element: <ProtectedRoutes />,
     children: [
       {
-        path: PATHS.DASHBOARD.ROOT,
+        path: PATHS.DASHBOARD.ADMIN.ROOT,
         element: <AdminDashboard />,
         children: [
           { index: true, element: <DashboardContent /> },
           {
-            path: PATHS.DASHBOARD.DOCTORS,
+            path: PATHS.DASHBOARD.ADMIN.DOCTORS,
             element: <DoctorsContent />,
           },
         ],
       },
     ],
+  },
+  {
+    element: <PatientDashboard />,
+    children: [{ index: true, element: <PatientDashboard /> }],
   },
 ])
 

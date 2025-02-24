@@ -5,8 +5,11 @@ export const PATHS = {
   LOGIN: "/logIn",
   SIGNUP: "/SignUp",
   DASHBOARD: {
-    ROOT: "/dashboard",
-    DOCTORS: "/dashboard/doctors",
-    USERS: "/dashboard/users",
+    ADMIN: {
+      ROOT: "/dashboard",
+      DOCTORS: "/dashboard/doctors",
+      USERS: "/dashboard/users",
+    },
+    pATIENT: {},
   },
 }
