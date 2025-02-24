@@ -10,6 +10,10 @@ export const PATHS = {
       DOCTORS: "/dashboard/doctors",
       USERS: "/dashboard/users",
     },
-    pATIENT: {},
+    PATIENT: {
+      ROOT: "/patient",
+      HISTORY: "/appointment/history",
+      RESCHEDULE: "/appointment/reschedule",
+    },
   },
 }

@@ -1,32 +1,40 @@
+import { doctors } from "../../data/doctors"
+
 function DoctorsContent() {
   return (
-    <div>
-      <h1 className="text-2xl font-medium my-4">Doctors</h1>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Specialist</th>
-          <th>Location</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Nicolas Themp</td>
-          <td>Family doctor</td>
-          <td>Bugesera</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Nicolas Themp</td>
-          <td>Family doctor</td>
-          <td>Bugesera</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Nicolas Themp</td>
-          <td>Family doctor</td>
-          <td>Bugesera</td>
-        </tr>
+    <div className="flex justify-center items-center">
+      <table className="w-full border-collapse border border-gray-200 shadow-md rounded-lg">
+        <thead className="">
+          <tr>
+            <th className="p-3 border border-gray-300">ID</th>
+            <th className="p-3 border border-gray-300">First Name</th>
+            <th className="p-3 border border-gray-300">Last Name</th>
+            <th className="p-3 border border-gray-300">Specialist</th>
+            <th className="p-3 border border-gray-300">Gender</th>
+            {/* <th className="p-3 border border-gray-300">Location</th> */}
+          </tr>
+        </thead>
+
+        <tbody>
+          {doctors.map((doctor, index) => (
+            <tr
+              key={doctor.id}
+              className={`${
+                index % 2 === 0 ? "bg-gray-100" : "bg-white"
+              } hover:bg-blue-100 transition`}
+            >
+              <td className="p-3 border border-gray-300">{doctor.id}</td>
+              <td className="p-3 border border-gray-300">
+                {doctor.first_name}
+              </td>
+              <td className="p-3 border border-gray-300">{doctor.last_name}</td>
+              <td className="p-3 border border-gray-300">
+                {doctor.specialist}
+              </td>
+              <td className="p-3 border border-gray-300">{doctor.gender}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   )

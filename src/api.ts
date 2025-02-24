@@ -8,3 +8,10 @@ export type LogInFormType = {
   email: string
   password: string
 }
+export type AppointmentFormType = {
+  username: string
+  email: string
+  date: string
+  time: string
+  doctor: string
+}

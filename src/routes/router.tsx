@@ -10,7 +10,8 @@ import DashboardContent from "../components/dashboard"
 import AdminDashboard from "../pages/AdminDashboard"
 import ProtectedRoutes from "./protected"
 import DoctorsContent from "../components/dashboard/DoctorsContent"
-import PatientDashboard from "../components/dashboard/patient"
+import PatientDashboardLayout from "../components/dashboard/patient"
+import PatientContent from "../components/dashboard/patient/PatientContent"
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,9 @@ const router = createBrowserRouter([
     ],
   },
   {
-    element: <PatientDashboard />,
-    children: [{ index: true, element: <PatientDashboard /> }],
+    path: PATHS.DASHBOARD.PATIENT.ROOT,
+    element: <PatientDashboardLayout />,
+    children: [{ index: true, element: <PatientContent /> }],
   },
 ])
 

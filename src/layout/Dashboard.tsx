@@ -22,7 +22,7 @@ const sidebarLinks = [
   },
 ]
 
-function DashboardLayout() {
+function AdminDashboardLayout() {
   return (
     <div className="flex gap-12">
       <Sidebar links={sidebarLinks} />
@@ -31,4 +31,4 @@ function DashboardLayout() {
   )
 }
 
-export default DashboardLayout
+export default AdminDashboardLayout

@@ -1,7 +1,7 @@
-import DashboardLayout from "../layout/Dashboard"
+import AdminDashboardLayout from "../layout/Dashboard"
 
 function AdminDashboard() {
-  return <DashboardLayout />
+  return <AdminDashboardLayout />
 }
 
 export default AdminDashboard
