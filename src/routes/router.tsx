@@ -42,14 +42,24 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: PATHS.DASHBOARD.PATIENT.ROOT,
-    element: <PatientDashboardLayout />,
-    children: [{ index: true, element: <PatientContent /> }],
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: PATHS.DASHBOARD.PATIENT.ROOT,
+        element: <PatientDashboardLayout />,
+        children: [{ index: true, element: <PatientContent /> }],
+      },
+    ],
   },
   {
-    path: PATHS.DASHBOARD.DOCTOR.ROOT,
-    element: <DoctorDashboardLayout />,
-    children: [{ index: true, element: <PatientContent /> }],
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: PATHS.DASHBOARD.DOCTOR.ROOT,
+        element: <DoctorDashboardLayout />,
+        children: [{ index: true, element: <PatientContent /> }],
+      },
+    ],
   },
 ])
 
