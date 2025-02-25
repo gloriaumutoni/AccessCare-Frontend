@@ -2,6 +2,7 @@ import { useFormContext } from "react-hook-form"
 import { AppointmentFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
+import useUsers from "../../hooks/useUsers"
 
 function AppointmentForm() {
   const { data, loading, error } = useUsers()
@@ -56,6 +57,3 @@ function AppointmentForm() {
 }
 
 export default AppointmentForm
-function useUsers(): { data: any; loading: any; error: any } {
-  throw new Error("Function not implemented.")
-}
