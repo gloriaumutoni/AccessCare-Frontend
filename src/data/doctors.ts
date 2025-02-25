@@ -4,7 +4,7 @@ export const doctors = [
     first_name: "Eddi",
     last_name: "Geddis",
     specialist: "Pediatrician",
-    gender: "Polygender",
+    gender: "Female",
     Location: "Ruhengeri",
   },
   {

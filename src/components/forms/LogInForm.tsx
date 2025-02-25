@@ -2,10 +2,16 @@ import { useFormContext } from "react-hook-form"
 import { LogInFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
-import { apiClient } from "../../api/auth"
 import { useNavigate } from "react-router"
+import useAuth from "../../hooks/useAuth"
+import { useEffect } from "react"
+import { PATHS } from "../../routes/constants"
 
 function LogInForm() {
+  const { data, loading, error, login } = useAuth()
+
+  if (error) console.log(error)
+
   const navigate = useNavigate()
   const {
     register,
@@ -13,13 +19,24 @@ function LogInForm() {
     formState: { errors },
   } = useFormContext<LogInFormType>()
   const SubmitData = (data: LogInFormType) => {
-    apiClient
-      .post("/auth/login", data)
-      .then((response) => {
-        localStorage.setItem("token", response.data.access_token)
-      })
-      .catch((err) => console.log(err.message))
+    login({ data })
   }
+  useEffect(() => {
+    if (data) {
+      localStorage.setItem("token", data.access_token)
+      localStorage.setItem("user", data.user)
+      console.log(data)
+      if (data.user.role === "patient") {
+        navigate(PATHS.DASHBOARD.PATIENT.ROOT)
+      }
+      if (data.user.role === "admin") {
+        navigate(PATHS.DASHBOARD.ADMIN.ROOT)
+      }
+      if (data.user.role === "doctor") {
+        navigate(PATHS.DASHBOARD.DOCTOR.ROOT)
+      }
+    }
+  }, [data])
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
@@ -38,15 +55,9 @@ function LogInForm() {
         register={register("password")}
         errorMessage={errors.password?.message}
       />
+      {error && <p className="text-red-500">Something went wrong</p>}
       <div className="flex justify-center">
-        <Button
-          onClick={() => {
-            navigate("/dashboard")
-          }}
-          className="w-xs rounded-lg mt-3 py-2"
-        >
-          LogIn
-        </Button>
+        <Button className="w-xs rounded-lg mt-3 py-2">LogIn</Button>
       </div>
     </form>
   )

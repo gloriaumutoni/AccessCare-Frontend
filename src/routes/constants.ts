@@ -15,5 +15,9 @@ export const PATHS = {
       HISTORY: "/appointment/history",
       RESCHEDULE: "/appointment/reschedule",
     },
+    DOCTOR: {
+      ROOT: "/doctor",
+      APPOINTMENTS: "/doctor/appointments",
+    },
   },
 }

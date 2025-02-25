@@ -4,45 +4,41 @@ import Input from "../bookings/Input"
 import Button from "../Button"
 
 function AppointmentForm() {
+  const { data, loading, error } = useUsers()
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useFormContext<AppointmentFormType>()
-  const SubmitData = (data: AppointmentFormType) => {
+  const SubmitData = (formData: AppointmentFormType) => {
     console.log(data)
   }
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
       <Input
-        label="Username"
-        placeholder="Enter your username"
-        className="rounded-md w-xs"
-        register={register("username")}
-        errorMessage={errors.username?.message}
-      />
-      <Input
-        label="Email"
-        placeholder="Enter your email"
-        className="rounded-md w-xs"
-        register={register("email")}
-        errorMessage={errors.email?.message}
-      />
-      <Input
-        label="Date"
+        label="Start_Date"
         placeholder="Enter Date"
         type="date"
         className="rounded-md w-xs"
-        register={register("date")}
-        errorMessage={errors.date?.message}
+        register={register("start_date")}
+        errorMessage={errors.start_date?.message}
       />
       <Input
-        label="Time"
-        placeholder="Enter Time"
-        type="time"
+        label="End_date"
+        placeholder="Enter End date"
+        type="date"
         className="rounded-md w-xs"
-        register={register("time")}
-        errorMessage={errors.time?.message}
+        register={register("end_date")}
+        errorMessage={errors.end_date?.message}
+      />
+      <Input
+        label="Notes"
+        placeholder="Enter Notes"
+        type="text"
+        className="rounded-md w-xs"
+        register={register("notes")}
+        errorMessage={errors.notes?.message}
       />
       <Input
         label="Doctor's Name"
@@ -60,3 +56,6 @@ function AppointmentForm() {
 }
 
 export default AppointmentForm
+function useUsers(): { data: any; loading: any; error: any } {
+  throw new Error("Function not implemented.")
+}

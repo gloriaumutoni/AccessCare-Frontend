@@ -11,7 +11,7 @@ function DoctorsContent() {
             <th className="p-3 border border-gray-300">Last Name</th>
             <th className="p-3 border border-gray-300">Specialist</th>
             <th className="p-3 border border-gray-300">Gender</th>
-            {/* <th className="p-3 border border-gray-300">Location</th> */}
+            <th className="p-3 border border-gray-300">Location</th>
           </tr>
         </thead>
 
@@ -32,6 +32,7 @@ function DoctorsContent() {
                 {doctor.specialist}
               </td>
               <td className="p-3 border border-gray-300">{doctor.gender}</td>
+              <td className="p-3 border border-gray-300">{doctor.Location}</td>
             </tr>
           ))}
         </tbody>

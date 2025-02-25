@@ -12,6 +12,7 @@ import ProtectedRoutes from "./protected"
 import DoctorsContent from "../components/dashboard/DoctorsContent"
 import PatientDashboardLayout from "../components/dashboard/patient"
 import PatientContent from "../components/dashboard/patient/PatientContent"
+import DoctorDashboardLayout from "../components/dashboard/doctor"
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path: PATHS.DASHBOARD.PATIENT.ROOT,
     element: <PatientDashboardLayout />,
+    children: [{ index: true, element: <PatientContent /> }],
+  },
+  {
+    path: PATHS.DASHBOARD.DOCTOR.ROOT,
+    element: <DoctorDashboardLayout />,
     children: [{ index: true, element: <PatientContent /> }],
   },
 ])

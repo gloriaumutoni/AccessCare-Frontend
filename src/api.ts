@@ -9,9 +9,8 @@ export type LogInFormType = {
   password: string
 }
 export type AppointmentFormType = {
-  username: string
-  email: string
-  date: string
-  time: string
+  start_date: Date
+  end_date: Date
+  notes: string
   doctor: string
 }
