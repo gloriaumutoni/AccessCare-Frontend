@@ -3,9 +3,16 @@ import { AppointmentFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
 import useUsers from "../../hooks/useUsers"
+import useCreateAppointment from "../../hooks/useCreateAppointment"
 
 function AppointmentForm() {
   const { data, loading, error } = useUsers()
+  const {
+    data: appointmentData,
+    loading: appointmentLoading,
+    error: appointmentError,
+    createAppointment,
+  } = useCreateAppointment()
 
   const {
     register,
@@ -13,8 +20,9 @@ function AppointmentForm() {
     formState: { errors },
   } = useFormContext<AppointmentFormType>()
   const SubmitData = (formData: AppointmentFormType) => {
-    console.log(data)
+    createAppointment({ data: { ...formData, doctor_id: formData.doctor } })
   }
+
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
       <Input
@@ -41,16 +49,25 @@ function AppointmentForm() {
         register={register("notes")}
         errorMessage={errors.notes?.message}
       />
-      <Input
-        label="Doctor's Name"
-        placeholder="Enter Doctor"
-        type="text"
-        className="rounded-md w-xs"
-        register={register("doctor")}
-        errorMessage={errors.doctor?.message}
-      />
+
+      <select
+        {...register("doctor")}
+        className="border w-full rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
+      >
+        {data?.map((user) => {
+          return (
+            <option value={user.id} key={user.id}>
+              {user.username}
+            </option>
+          )
+        })}
+        <option value="1sfasfafasdfas">Example 1</option>
+      </select>
+
       <div className="flex justify-center">
-        <Button className="w-xs rounded-lg mt-3 py-2">Book Appointment</Button>
+        <Button className="w-xs rounded-lg mt-3 py-2">
+          {appointmentLoading ? "Creating..." : "Book Appointment"}
+        </Button>
       </div>
     </form>
   )
