@@ -1,42 +1,59 @@
-import { doctors } from "../../data/doctors"
-
-function DoctorsContent() {
+const DoctorsContent = () => {
   return (
-    <div className="flex justify-center items-center">
-      <table className="w-full border-collapse border border-gray-200 shadow-md rounded-lg">
-        <thead className="">
-          <tr>
-            <th className="p-3 border border-gray-300">ID</th>
-            <th className="p-3 border border-gray-300">First Name</th>
-            <th className="p-3 border border-gray-300">Last Name</th>
-            <th className="p-3 border border-gray-300">Specialist</th>
-            <th className="p-3 border border-gray-300">Gender</th>
-            <th className="p-3 border border-gray-300">Location</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {doctors.map((doctor, index) => (
-            <tr
-              key={doctor.id}
-              className={`${
-                index % 2 === 0 ? "bg-gray-100" : "bg-white"
-              } hover:bg-blue-100 transition`}
-            >
-              <td className="p-3 border border-gray-300">{doctor.id}</td>
-              <td className="p-3 border border-gray-300">
-                {doctor.first_name}
-              </td>
-              <td className="p-3 border border-gray-300">{doctor.last_name}</td>
-              <td className="p-3 border border-gray-300">
-                {doctor.specialist}
-              </td>
-              <td className="p-3 border border-gray-300">{doctor.gender}</td>
-              <td className="p-3 border border-gray-300">{doctor.Location}</td>
-            </tr>
+    <div className="p-6 bg-white rounded-lg shadow">
+      <div className="flex justify-between mb-4">
+        <Input placeholder="Search in list..." className="w-1/3" />
+        <div className="flex gap-2">
+          <Button variant="outline">Sort A-Z</Button>
+          <Button variant="outline">Filter</Button>
+          <Button className="bg-black text-white">+ Create Job</Button>
+        </div>
+      </div>
+      <Table>
+        <TableHeader>
+          <TableRow className="bg-gray-100">
+            <TableHead>Company</TableHead>
+            <TableHead>Job Name</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Work Type</TableHead>
+            <TableHead>Publish Date</TableHead>
+            <TableHead>Created By</TableHead>
+            <TableHead></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {jobs.map((job, index) => (
+            <TableRow key={index}>
+              <TableCell>{job.company}</TableCell>
+              <TableCell>{job.job}</TableCell>
+              <TableCell>
+                <span
+                  className={`px-2 py-1 text-sm rounded ${statusStyles[job.status]}`}
+                >
+                  {job.status}
+                </span>
+              </TableCell>
+              <TableCell>{job.workType}</TableCell>
+              <TableCell>{job.date}</TableCell>
+              <TableCell>{job.createdBy}</TableCell>
+              <TableCell>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <MoreVertical className="w-4 h-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem>View Details</DropdownMenuItem>
+                    <DropdownMenuItem>Edit</DropdownMenuItem>
+                    <DropdownMenuItem>Delete</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   )
 }

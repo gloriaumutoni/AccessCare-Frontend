@@ -4,9 +4,30 @@ import Input from "../bookings/Input"
 import Button from "../Button"
 import useUsers from "../../hooks/useUsers"
 import useCreateAppointment from "../../hooks/useCreateAppointment"
+import { useEffect } from "react"
+import axios from "axios"
 
 function AppointmentForm() {
-  const { data, loading, error } = useUsers()
+  // const { data, loading, error } = useUsers()
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const token = localStorage.getItem("token")
+
+        const response = await axios.get("http://localhost:3000/user", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        })
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchUsers()
+  }, [])
   const {
     data: appointmentData,
     loading: appointmentLoading,
@@ -24,7 +45,10 @@ function AppointmentForm() {
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>
+    <form
+      className="space-y-2 flex flex-col"
+      onSubmit={handleSubmit(SubmitData)}
+    >
       <Input
         label="Start_Date"
         placeholder="Enter Date"
@@ -41,27 +65,24 @@ function AppointmentForm() {
         register={register("end_date")}
         errorMessage={errors.end_date?.message}
       />
-      <Input
-        label="Notes"
-        placeholder="Enter Notes"
-        type="text"
-        className="rounded-md w-xs"
-        register={register("notes")}
-        errorMessage={errors.notes?.message}
-      />
+      <label>Appointments Description</label>
+      <textarea
+        {...register("notes")}
+        className="border w-xs rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
+      ></textarea>
 
+      <label>Doctor's Name</label>
       <select
         {...register("doctor")}
-        className="border w-full rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
+        className="border w-xs rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
       >
-        {data?.map((user) => {
+        {/* {data?.map((user) => {
           return (
             <option value={user.id} key={user.id}>
               {user.username}
             </option>
           )
-        })}
-        <option value="1sfasfafasdfas">Example 1</option>
+        })} */}
       </select>
 
       <div className="flex justify-center">

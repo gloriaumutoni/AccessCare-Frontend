@@ -18,7 +18,8 @@ function SignUpForm() {
     const { comfirmPassword, ...data } = formData
     apiClient
       .post("/auth/signup", data)
-      .then(() => {
+      .then((response) => {
+        console.log(response.data)
         navigate("/login")
       })
       .catch((err) => console.log(err.message))
