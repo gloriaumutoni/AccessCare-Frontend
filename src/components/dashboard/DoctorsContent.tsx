@@ -17,16 +17,21 @@ interface CreateDataProps {
 }
 ;[]
 
-function createData({
+const createData = ({
   Id,
   First_name,
   Last_name,
   Specialist,
   Gender,
   Location,
-}: CreateDataProps) {
-  return { Id, First_name, Last_name, Specialist, Gender, Location }
-}
+}: CreateDataProps) => ({
+  Id,
+  First_name,
+  Last_name,
+  Specialist,
+  Gender,
+  Location,
+})
 const rows = doctors.map((doctor) => createData({ ...doctor }))
 
 export default function DoctorsContent() {
