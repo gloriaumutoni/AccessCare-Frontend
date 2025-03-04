@@ -5,61 +5,45 @@ import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
 import Paper from "@mui/material/Paper"
 import { StyledTableCell, StyledTableRow } from "."
-import { doctors } from "../../../data/doctors"
+import useUsers from "../../../hooks/useUsers"
 
-interface CreateDataProps {
-  Id: number
-  First_name: string
-  Last_name: string
-  Specialist: string
-  Gender: string
-  Location: string
+interface UserProps {
+  id: string
+  username: string
+  email: string
 }
 ;[]
 
-const createData = ({
-  Id,
-  First_name,
-  Last_name,
-  Specialist,
-  Gender,
-  Location,
-}: CreateDataProps) => ({
-  Id,
-  First_name,
-  Last_name,
-  Specialist,
-  Gender,
-  Location,
+const createData = ({ id, username, email }: UserProps) => ({
+  id,
+  username,
+  email,
 })
 
-const rows = doctors.map((doctor) => createData({ ...doctor }))
-
 export default function UsersContent() {
+  const { data, loading, error } = useUsers()
+
+  const rows = data
+    ? data.map((user: UserProps) => createData({ ...user }))
+    : []
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Id</StyledTableCell>
-            <StyledTableCell align="left">First Name</StyledTableCell>
-            <StyledTableCell align="left">Last Name</StyledTableCell>
-            <StyledTableCell align="left">Gender</StyledTableCell>
-            <StyledTableCell align="left">Specialist</StyledTableCell>
-            <StyledTableCell align="left">Location</StyledTableCell>
+            <StyledTableCell align="left">Username</StyledTableCell>
+            <StyledTableCell align="left">Email</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <StyledTableRow key={row.Id}>
+            <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
-                {row.Id}
+                {row.id}
               </StyledTableCell>
-              <StyledTableCell align="left">{row.First_name}</StyledTableCell>
-              <StyledTableCell align="left">{row.Last_name}</StyledTableCell>
-              <StyledTableCell align="left">{row.Gender}</StyledTableCell>
-              <StyledTableCell align="left">{row.Specialist}</StyledTableCell>
-              <StyledTableCell align="left">{row.Location}</StyledTableCell>
+              <StyledTableCell align="left">{row.username}</StyledTableCell>
+              <StyledTableCell align="left">{row.email}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
