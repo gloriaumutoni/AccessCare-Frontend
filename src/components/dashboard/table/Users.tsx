@@ -4,8 +4,8 @@ import TableContainer from "@mui/material/TableContainer"
 import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
 import Paper from "@mui/material/Paper"
-import { StyledTableCell, StyledTableRow } from "./table"
-import { doctors } from "../../data/doctors"
+import { StyledTableCell, StyledTableRow } from "."
+import { doctors } from "../../../data/doctors"
 
 interface CreateDataProps {
   Id: number
@@ -35,7 +35,7 @@ const createData = ({
 
 const rows = doctors.map((doctor) => createData({ ...doctor }))
 
-export default function DoctorsContent() {
+export default function UsersContent() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">

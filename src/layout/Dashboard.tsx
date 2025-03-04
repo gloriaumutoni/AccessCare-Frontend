@@ -16,7 +16,7 @@ const sidebarLinks = [
     element: <FaUserDoctor />,
   },
   {
-    path: PATHS.DASHBOARD.ADMIN.ROOT,
+    path: PATHS.DASHBOARD.ADMIN.USERS,
     text: "Users",
     element: <FaUser />,
   },
