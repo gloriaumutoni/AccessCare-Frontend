@@ -19,6 +19,7 @@ function AppointmentForm() {
     handleSubmit,
     formState: { errors },
   } = useFormContext<AppointmentFormType>()
+
   const SubmitData = (formData: AppointmentFormType) => {
     createAppointment({ data: { ...formData, doctor_id: formData.doctor } })
   }
