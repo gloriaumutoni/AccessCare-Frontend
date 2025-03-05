@@ -4,8 +4,6 @@ import Input from "../bookings/Input"
 import Button from "../Button"
 import useUsers from "../../hooks/useUsers"
 import useCreateAppointment from "../../hooks/useCreateAppointment"
-import { useEffect } from "react"
-import axios from "axios"
 
 function AppointmentForm() {
   const { data, loading, error } = useUsers()
