@@ -11,13 +11,15 @@ interface UserProps {
   id: string
   username: string
   email: string
+  role: string
 }
 ;[]
 
-const createData = ({ id, username, email }: UserProps) => ({
+const createData = ({ id, username, email, role }: UserProps) => ({
   id,
   username,
   email,
+  role,
 })
 
 export default function UsersContent() {
@@ -37,15 +39,17 @@ export default function UsersContent() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.id}>
-              <StyledTableCell component="th" scope="row">
-                {row.id}
-              </StyledTableCell>
-              <StyledTableCell align="left">{row.username}</StyledTableCell>
-              <StyledTableCell align="left">{row.email}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+          {rows
+            .filter((row) => row.role === "patient")
+            .map((row) => (
+              <StyledTableRow key={row.id}>
+                <StyledTableCell component="th" scope="row">
+                  {row.id}
+                </StyledTableCell>
+                <StyledTableCell align="left">{row.username}</StyledTableCell>
+                <StyledTableCell align="left">{row.email}</StyledTableCell>
+              </StyledTableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>
