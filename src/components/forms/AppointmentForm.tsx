@@ -8,26 +8,7 @@ import { useEffect } from "react"
 import axios from "axios"
 
 function AppointmentForm() {
-  // const { data, loading, error } = useUsers()
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const token = localStorage.getItem("token")
-
-        const response = await axios.get("http://localhost:3000/user", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        })
-        console.log(response)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchUsers()
-  }, [])
+  const { data, loading, error } = useUsers()
   const {
     data: appointmentData,
     loading: appointmentLoading,
@@ -76,13 +57,13 @@ function AppointmentForm() {
         {...register("doctor")}
         className="border w-xs rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
       >
-        {/* {data?.map((user) => {
-          return (
+        {data
+          ?.filter((user) => user.role === "doctor")
+          .map((user) => (
             <option value={user.id} key={user.id}>
               {user.username}
             </option>
-          )
-        })} */}
+          ))}
       </select>
 
       <div className="flex justify-center">
