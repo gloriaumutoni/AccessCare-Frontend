@@ -9,19 +9,16 @@ export const useUsers = (users: User[]) => {
   const filteredUsers = useMemo(() => {
     let result = users
 
-    // Search filter
     if (searchTerm) {
       result = result.filter((user) =>
         user.username.toLowerCase().includes(searchTerm.toLowerCase()),
       )
     }
 
-    // Status filter
     if (filterStatus) {
       result = result.filter((user) => user.role === filterStatus)
     }
 
-    // Sorting
     result = result.sort((a, b) => {
       if (sortOrder === "asc") return a.username.localeCompare(b.username)
       if (sortOrder === "desc") return b.username.localeCompare(a.username)
