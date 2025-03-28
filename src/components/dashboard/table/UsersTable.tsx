@@ -44,9 +44,6 @@ const UsersTable = ({ users }: UsersTableProps) => {
               <td className="border p-2">{user.username}</td>
               <td className="border p-2">{user.email}</td>
               <td className="border p-2">{user.role}</td>
-              <td className="border p-2">
-                {new Date(user.createdAt).toLocaleDateString()}
-              </td>
             </tr>
           ))}
         </tbody>

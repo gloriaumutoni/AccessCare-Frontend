@@ -1,5 +1,4 @@
 import { FaCalendarAlt, FaRegCalendarCheck } from "react-icons/fa"
-import { MdEditCalendar } from "react-icons/md"
 import { Outlet } from "react-router"
 import { PATHS } from "../../../routes/constants"
 import Sidebar from "../Sidebar"

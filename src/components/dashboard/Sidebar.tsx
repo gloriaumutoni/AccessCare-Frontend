@@ -23,6 +23,7 @@ function Sidebar({ links }: sidebarLinks) {
     localStorage.removeItem("token")
     navigate(PATHS.HOME)
   }
+
   return (
     <section className="bg-primary-400 text-white flex flex-col w-3xs h-screen text-lg space-y-3 px-8 py-3">
       <Logo />
