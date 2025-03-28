@@ -4,10 +4,12 @@ export type SignUpFormType = {
   password: string
   comfirmPassword: string
 }
+
 export type LogInFormType = {
   email: string
   password: string
 }
+
 export type AppointmentFormType = {
   start_date: Date
   end_date: Date
@@ -21,4 +23,5 @@ export interface User {
   email: string
   password: string
   role: string
+  createdAt: string
 }
