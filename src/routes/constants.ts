@@ -9,6 +9,7 @@ export const PATHS = {
       ROOT: "/dashboard",
       DOCTORS: "/dashboard/doctors",
       USERS: "/dashboard/users",
+      APPOINTMENTS: "/dashboard/appointments",
     },
     PATIENT: {
       ROOT: "/patient",
