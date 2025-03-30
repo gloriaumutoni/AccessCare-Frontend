@@ -25,3 +25,11 @@ export interface User {
   role: string
   createdAt: string
 }
+
+export interface Appointment {
+  id: string
+  start_date: string
+  end_date: string
+  notes: string
+  doctor: string
+}

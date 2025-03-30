@@ -1,13 +1,13 @@
 import { useUsers } from "../../../hooks/useData"
-import { User } from "../../../api"
+import { User, Appointment } from "../../../api"
 
 interface UsersTableProps {
-  users: User[]
+  users: User[] | Appointment[]
 }
 
 const UsersTable = ({ users }: UsersTableProps) => {
   const { filteredUsers, searchTerm, setSearchTerm, sortOrder, setSortOrder } =
-    useUsers(users)
+    useUsers(users as User[])
 
   return (
     <div className="p-4 w-full">

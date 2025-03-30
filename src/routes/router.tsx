@@ -14,7 +14,7 @@ import PatientDashboardLayout from "../components/dashboard/patient"
 import PatientContent from "../components/dashboard/patient/PatientContent"
 import DoctorDashboardLayout from "../components/dashboard/doctor"
 import UsersContent from "../components/dashboard/UsersContent"
-
+import AppointmentContent from "../components/dashboard/AppointmentContent"
 const router = createBrowserRouter([
   {
     path: PATHS.HOME,
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
           {
             path: PATHS.DASHBOARD.ADMIN.USERS,
             element: <UsersContent />,
+          },
+          {
+            path: PATHS.DASHBOARD.ADMIN.APPOINTMENTS,
+            element: <AppointmentContent />,
           },
         ],
       },
