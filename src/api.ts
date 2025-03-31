@@ -27,9 +27,17 @@ export interface User {
 }
 
 export interface Appointment {
-  id: string
+  id: number
   start_date: string
   end_date: string
   notes: string
-  doctor: string
+  status: string
+  owner: User
+  provider: User
+}
+
+export interface AppointmentsTableProps {
+  appointments: Appointment
+  owner: User
+  provider: User
 }
