@@ -2,26 +2,46 @@ import { useFormContext } from "react-hook-form"
 import { AppointmentFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
-import useUsers from "../../hooks/useUsers"
+import useDoctors from "../../hooks/useDoctors"
 import useCreateAppointment from "../../hooks/useCreateAppointment"
+import { useState } from "react"
 
 function AppointmentForm() {
-  const { data, loading, error } = useUsers()
+  const { data, loading, error } = useDoctors()
   const {
     data: appointmentData,
     loading: appointmentLoading,
     error: appointmentError,
     createAppointment,
   } = useCreateAppointment()
-
+  const [submitSuccess, setSubmitSuccess] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useFormContext<AppointmentFormType>()
 
-  const SubmitData = (formData: AppointmentFormType) => {
-    createAppointment({ data: { ...formData, doctor_id: formData.doctor } })
+  const SubmitData = async (formData: AppointmentFormType) => {
+    try {
+      const response = await createAppointment({
+        data: { ...formData, doctor_id: formData.doctor },
+      })
+      console.log("Appointment creation response:", response)
+      setSubmitSuccess(true)
+      reset()
+      setTimeout(() => setSubmitSuccess(false), 3000)
+    } catch (error) {
+      console.error("Error creating appointment:", error)
+    }
+  }
+
+  if (loading) {
+    return <div>Loading doctors...</div>
+  }
+
+  if (error) {
+    return <div>Error loading doctors: {error.message}</div>
   }
 
   return (
@@ -34,7 +54,9 @@ function AppointmentForm() {
         placeholder="Enter Date"
         type="date"
         className="rounded-md w-xs"
-        register={register("start_date")}
+        register={register("start_date", {
+          required: "Start date is required",
+        })}
         errorMessage={errors.start_date?.message}
       />
       <Input
@@ -42,31 +64,38 @@ function AppointmentForm() {
         placeholder="Enter End date"
         type="date"
         className="rounded-md w-xs"
-        register={register("end_date")}
+        register={register("end_date", { required: "End date is required" })}
         errorMessage={errors.end_date?.message}
       />
       <label>Appointments Description</label>
       <textarea
-        {...register("notes")}
+        {...register("notes", { required: "Description is required" })}
         className="border w-xs rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
       ></textarea>
 
       <label>Doctor's Name</label>
       <select
-        {...register("doctor")}
+        {...register("doctor", { required: "Please select a doctor" })}
         className="border w-xs rounded-md bg-gray-100 py-1 border-primary-400 indent-3 outline-none"
       >
-        {data
-          ?.filter((user) => user.role === "doctor")
-          .map((user) => (
-            <option value={user.id} key={user.id}>
-              {user.username}
-            </option>
-          ))}
+        <option value="">Select a doctor</option>
+        {data?.map((user) => (
+          <option value={user.id} key={user.id}>
+            {user.username}
+          </option>
+        ))}
       </select>
 
-      <div className="flex justify-center">
-        <Button className="w-xs rounded-lg mt-3 py-2">
+      <div className="flex flex-col items-center gap-2">
+        {submitSuccess && (
+          <div className="text-green-600">
+            Appointment created successfully!
+          </div>
+        )}
+        {appointmentError && (
+          <div className="text-red-600">Error: {appointmentError.message}</div>
+        )}
+        <Button type="submit" className="w-xs rounded-lg mt-3 py-2">
           {appointmentLoading ? "Creating..." : "Book Appointment"}
         </Button>
       </div>
