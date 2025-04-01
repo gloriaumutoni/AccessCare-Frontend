@@ -28,8 +28,6 @@ const DoctorApppointmentActionTable = ({
           const filtered = appointments.filter(
             (appointment) => appointment.provider.id === currentUser.id,
           )
-          console.log("Current user ID:", currentUser.id)
-          console.log("Filtered appointments:", filtered)
           setDoctorAppointments(filtered)
         }
       }
@@ -45,9 +43,6 @@ const DoctorApppointmentActionTable = ({
     sortOrder,
     setSortOrder,
   } = useAppointmentsData(doctorAppointments)
-
-  console.log("Filtered appointments for display:", filteredAppointments)
-  console.log("AppointmentStatus.PENDING:", AppointmentStatus.PENDING)
 
   return (
     <div className="p-4 w-full">
@@ -93,7 +88,6 @@ const DoctorApppointmentActionTable = ({
                     <>
                       <Button
                         onClick={() => {
-                          console.log("Accepting appointment:", appointment.id)
                           onAction(appointment.id, {
                             action: "accepted",
                             notes: "Appointment accepted by doctor",
@@ -106,7 +100,6 @@ const DoctorApppointmentActionTable = ({
                       </Button>
                       <Button
                         onClick={() => {
-                          console.log("Declining appointment:", appointment.id)
                           onAction(appointment.id, {
                             action: "declined",
                             notes: "Appointment declined by doctor",

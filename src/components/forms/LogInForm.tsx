@@ -10,7 +10,8 @@ import { PATHS } from "../../routes/constants"
 function LogInForm() {
   const { data, loading, error, login } = useAuth()
 
-  if (error) console.log(error)
+  if (loading) return <div className="text-gray-500">Loading...</div>
+  if (error) return <div className="text-red-500">{error.message}</div>
 
   const navigate = useNavigate()
   const {
@@ -25,7 +26,6 @@ function LogInForm() {
     if (data) {
       localStorage.setItem("token", data.access_token)
       localStorage.setItem("user", JSON.stringify(data.user))
-      console.log(data)
       if (data.user.role === "patient") {
         navigate(PATHS.DASHBOARD.PATIENT.ROOT)
       }
