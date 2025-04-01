@@ -1,4 +1,4 @@
-import { useFormContext } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { AppointmentFormType } from "../../api"
 import Input from "../bookings/Input"
 import Button from "../Button"
@@ -20,14 +20,14 @@ function AppointmentForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useFormContext<AppointmentFormType>()
+  } = useForm<AppointmentFormType>()
 
   const SubmitData = async (formData: AppointmentFormType) => {
+    const appointmentData = { ...formData, providerId: +formData.doctor }
     try {
-      const response = await createAppointment({
-        data: { ...formData, doctor_id: formData.doctor },
+      await createAppointment({
+        data: appointmentData,
       })
-      console.log("Appointment creation response:", response)
       setSubmitSuccess(true)
       reset()
       setTimeout(() => setSubmitSuccess(false), 3000)
@@ -95,7 +95,7 @@ function AppointmentForm() {
         {appointmentError && (
           <div className="text-red-600">Error: {appointmentError.message}</div>
         )}
-        <Button type="submit" className="w-xs rounded-lg mt-3 py-2">
+        <Button className="w-xs rounded-lg mt-3 py-2">
           {appointmentLoading ? "Creating..." : "Book Appointment"}
         </Button>
       </div>

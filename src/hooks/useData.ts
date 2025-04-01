@@ -19,16 +19,6 @@ export const useUsers = (users: User[]) => {
       result = result.filter((user) => user.role === filterStatus)
     }
 
-    result = result.sort((a, b) => {
-      if (sortOrder === "asc") return a.username.localeCompare(b.username)
-      if (sortOrder === "desc") return b.username.localeCompare(a.username)
-      if (sortOrder === "newest")
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-      if (sortOrder === "oldest")
-        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-      return 0
-    })
-
     return result
   }, [users, searchTerm, sortOrder, filterStatus])
 

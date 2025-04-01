@@ -1,13 +1,11 @@
-import useUsers from "../../hooks/useUsers"
-import UsersTable from "./table/UsersTable"
+import useAppointments from "../../hooks/useAppointments"
+import AppointmentsTable from "./table/AppointmentsTable"
 
 function DoctorsContent() {
-  const { data, loading, error } = useUsers()
+  const { data, loading, error } = useAppointments()
   if (loading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
-  return (
-    <UsersTable users={data?.filter((user) => user.role === "doctor") || []} />
-  )
+  return <AppointmentsTable appointments={data || []} />
 }
 
 export default DoctorsContent
