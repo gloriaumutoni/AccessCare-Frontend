@@ -24,7 +24,7 @@ function LogInForm() {
   useEffect(() => {
     if (data) {
       localStorage.setItem("token", data.access_token)
-      localStorage.setItem("user", data.user)
+      localStorage.setItem("user", JSON.stringify(data.user))
       console.log(data)
       if (data.user.role === "patient") {
         navigate(PATHS.DASHBOARD.PATIENT.ROOT)

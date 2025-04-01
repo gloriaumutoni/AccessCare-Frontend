@@ -13,12 +13,12 @@ export interface User {
 }
 
 export enum AppointmentStatus {
-  PENDING = "PENDING",
-  ACCEPTED = "ACCEPTED",
-  DECLINED = "DECLINED",
-  RESCHEDULED = "RESCHEDULED",
-  COMPLETED = "COMPLETED",
-  CANCELLED = "CANCELLED",
+  PENDING = "pending",
+  ACCEPTED = "accepted",
+  DECLINED = "declined",
+  RESCHEDULED = "rescheduled",
+  COMPLETED = "completed",
+  CANCELLED = "cancelled",
 }
 
 export interface Appointment {

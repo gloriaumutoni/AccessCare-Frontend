@@ -41,3 +41,10 @@ export interface AppointmentsTableProps {
   owner: User
   provider: User
 }
+
+export interface DoctorActionDto {
+  action: "accepted" | "declined"
+  notes?: string
+  newStartDate?: string
+  newEndDate?: string
+}
