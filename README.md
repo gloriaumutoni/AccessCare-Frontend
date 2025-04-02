@@ -1,6 +1,6 @@
 # Digital Health Platform
 
-A mobile-first healthcare solution designed to improve access to medical services in rural Rwanda. Users can consult doctors, view available doctors at specific hospitals, and access multilingual health resources. The platform integrates with Rwanda’s national health insurance for seamless payments.
+A healthcare solution designed to improve access to medical services in rural Rwanda. Users can consult doctors, view available doctors at specific hospitals, and access multilingual health resources. The platform integrates with Rwanda’s national health insurance for seamless payments.
 
 ## Features
 
