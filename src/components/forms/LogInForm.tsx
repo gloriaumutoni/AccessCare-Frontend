@@ -10,9 +10,6 @@ import { PATHS } from "../../routes/constants"
 function LogInForm() {
   const { data, loading, error, login } = useAuth()
 
-  if (loading) return <div className="text-gray-500">Loading...</div>
-  if (error) return <div className="text-red-500">{error.message}</div>
-
   const navigate = useNavigate()
   const {
     register,
@@ -37,6 +34,9 @@ function LogInForm() {
       }
     }
   }, [data])
+
+  if (loading) return <div className="text-gray-500">Loading...</div>
+  if (error) return <div className="text-red-500">{error.message}</div>
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit(SubmitData)}>

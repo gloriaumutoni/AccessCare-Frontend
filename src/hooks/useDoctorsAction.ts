@@ -1,7 +1,6 @@
-// useDoctorsAction.ts hook
 import { useState } from "react"
-import { apiClient } from "../api/auth"
 import { DoctorActionDto } from "../api"
+import axiosInstance from "../utils/axiosInstance"
 
 export default () => {
   const [actionLoading, setActionLoading] = useState(false)
@@ -14,9 +13,9 @@ export default () => {
     try {
       setActionLoading(true)
       setActionError(null)
-      const response = await apiClient.patch(
+      const response = await axiosInstance.patch(
         `/appointment/${appointmentId}/doctor-action`,
-        action,
+        { action: action.action },
       )
       return response.data
     } catch (error) {

@@ -15,6 +15,8 @@ function DoctorsActionContent() {
     action: DoctorActionDto,
   ) => {
     try {
+      console.log("appointmentId", appointmentId)
+      console.log("action", action)
       await doctorAction(appointmentId, action)
       window.location.reload()
     } catch (error) {
