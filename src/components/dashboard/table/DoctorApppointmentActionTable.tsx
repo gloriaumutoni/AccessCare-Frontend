@@ -148,7 +148,7 @@ const DoctorApppointmentActionTable = ({
                             })
                           }}
                           disabled={isActionLoading}
-                          className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"
+                          className="px-5 py-1 rounded-4xl text-sm hover:bg-green-500 text-white"
                         >
                           Accept
                         </Button>
@@ -160,7 +160,7 @@ const DoctorApppointmentActionTable = ({
                             })
                           }}
                           disabled={isActionLoading}
-                          className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                          className="bg-red-500 hover:bg-red-600 text-white px-5 py-1 rounded-4xl text-sm"
                         >
                           Decline
                         </Button>
