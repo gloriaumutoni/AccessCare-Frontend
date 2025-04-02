@@ -4,7 +4,7 @@ import Input from "../bookings/Input"
 import Button from "../Button"
 import useDoctors from "../../hooks/useDoctors"
 import useCreateAppointment from "../../hooks/useCreateAppointment"
-import { useState } from "react"
+import toast from "react-hot-toast"
 
 function AppointmentForm() {
   const { data, loading, error } = useDoctors()
@@ -14,7 +14,6 @@ function AppointmentForm() {
     error: appointmentError,
     createAppointment,
   } = useCreateAppointment()
-  const [submitSuccess, setSubmitSuccess] = useState(false)
   const {
     register,
     handleSubmit,
@@ -28,11 +27,11 @@ function AppointmentForm() {
       await createAppointment({
         data: appointmentData,
       })
-      setSubmitSuccess(true)
+      toast.success("Appointment booked successfully!")
       reset()
-      setTimeout(() => setSubmitSuccess(false), 3000)
     } catch (error) {
       console.error("Error creating appointment:", error)
+      toast.error("Failed to book appointment. Please try again.")
     }
   }
 
@@ -87,14 +86,6 @@ function AppointmentForm() {
       </select>
 
       <div className="flex flex-col items-center gap-2">
-        {submitSuccess && (
-          <div className="text-green-600">
-            Appointment created successfully!
-          </div>
-        )}
-        {appointmentError && (
-          <div className="text-red-600">Error: {appointmentError.message}</div>
-        )}
         <Button className="w-xs rounded-lg mt-3 py-2">
           {appointmentLoading ? "Creating..." : "Book Appointment"}
         </Button>
