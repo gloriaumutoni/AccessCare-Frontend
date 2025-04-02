@@ -3,18 +3,17 @@ import usePatientAppointments from "../../../hooks/usePatientAppointments"
 import { useAppointmentsData } from "../../../hooks/useAppointmentsData"
 
 const AppointmentHistory: React.FC = () => {
-  const { data, loading, error } = usePatientAppointments()
+  const { data } = usePatientAppointments()
+  console.log("data")
   const {
-    filteredAppointments,
+    // filteredAppointments,
     searchTerm,
     setSearchTerm,
     sortOrder,
     setSortOrder,
   } = useAppointmentsData(data || [])
 
-  if (loading) return <div className="p-4">Loading appointments...</div>
-  if (error)
-    return <div className="p-4 text-red-500">Error: {error.message}</div>
+  if (data.length === 0) return <div className="p-4">No appointments found</div>
 
   return (
     <div className="p-4 w-full">
@@ -60,7 +59,7 @@ const AppointmentHistory: React.FC = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {filteredAppointments.map((appointment) => (
+            {data.pastAppointments.map((appointment) => (
               <tr key={appointment.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap border-b">
                   <div className="text-sm font-medium text-gray-900">

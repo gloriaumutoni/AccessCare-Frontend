@@ -25,7 +25,6 @@ export interface User {
   role: string
   createdAt: string
 }
-
 export interface Appointment {
   id: number
   start_date: string
