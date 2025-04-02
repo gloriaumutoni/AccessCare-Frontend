@@ -5,30 +5,39 @@ import { useAppointmentsData } from "../../../hooks/useAppointmentsData"
 const AppointmentHistory: React.FC = () => {
   const { data } = usePatientAppointments()
   console.log("data")
-  const {
-    // filteredAppointments,
-    searchTerm,
-    setSearchTerm,
-    sortOrder,
-    setSortOrder,
-  } = useAppointmentsData(data || [])
+  const { searchTerm, setSearchTerm, sortOrder, setSortOrder } =
+    useAppointmentsData(data || [])
 
   if (data.length === 0) return <div className="p-4">No appointments found</div>
 
   return (
     <div className="p-4 w-full">
       <div className="flex flex-wrap gap-4 mb-4">
-        <input
-          type="text"
-          placeholder="Search appointments..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="border p-2 rounded w-60"
-        />
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search appointments..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border rounded-4xl py-2 pl-10 pr-4 w-60"
+          />
+          <svg
+            className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
         <select
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          className="border p-2 rounded"
+          className="border rounded-lg p-2 px-2"
         >
           <option value="asc">Sort A-Z</option>
           <option value="desc">Sort Z-A</option>
@@ -89,7 +98,7 @@ const AppointmentHistory: React.FC = () => {
                     className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       appointment.status === "completed"
                         ? "bg-green-100 text-green-800"
-                        : appointment.status === "cancelled"
+                        : appointment.status === "declined"
                           ? "bg-red-100 text-red-800"
                           : appointment.status === "pending"
                             ? "bg-yellow-100 text-yellow-800"

@@ -15,11 +15,6 @@ const sidebarLinks = [
     text: "History",
     element: <FaRegCalendarCheck />,
   },
-  {
-    path: PATHS.DASHBOARD.PATIENT.RESCHEDULE,
-    text: "Reschedule Appointment",
-    element: <MdEditCalendar />,
-  },
 ]
 function PatientDashboardLayout() {
   return (
