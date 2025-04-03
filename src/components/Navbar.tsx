@@ -12,7 +12,7 @@ function Navbar() {
         <NavLink to={PATHS.HOME}>Home</NavLink>
         <NavLink to={PATHS.SERVICES}>Our Services</NavLink>
         <NavLink to={PATHS.BOOKINGS}>Find Doctors</NavLink>
-        <NavLink to={PATHS.DASHBOARD.ROOT}>Track your health</NavLink>
+        <NavLink to={PATHS.DASHBOARD.PATIENT.ROOT}>Track your health</NavLink>
       </div>
       <Button
         className="px-6 rounded-sm py-1"

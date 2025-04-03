@@ -1,4 +1,4 @@
-import { Appointment } from "../../../api"
+import { Appointment, DoctorActionDto } from "../../../api"
 import { AppointmentStatus } from "../../../api/types"
 import { useAppointmentsData } from "../../../hooks/useAppointmentsData"
 import { useEffect, useState } from "react"
@@ -6,7 +6,7 @@ import Button from "../../Button"
 
 interface AppointmentsTableProps {
   appointments: Appointment[]
-  onAction: (id: number, action: { action: string; notes: string }) => void
+  onAction: (appointmentId: number, action: DoctorActionDto) => void
   isActionLoading: boolean
 }
 

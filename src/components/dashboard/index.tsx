@@ -14,13 +14,13 @@ function DashboardContent() {
         />
         <DashboardCard
           title="Users"
-          participantsNumber={6}
+          participantsNumber={4}
           className="bg-green-100"
           LinkColor="text-green-500"
         />
         <DashboardCard
           title="Appointments"
-          participantsNumber={6}
+          participantsNumber={3}
           className="bg-yellow-100"
           LinkColor="text-yellow-500"
         />

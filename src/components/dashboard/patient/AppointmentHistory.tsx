@@ -4,11 +4,12 @@ import { useAppointmentsData } from "../../../hooks/useAppointmentsData"
 
 const AppointmentHistory: React.FC = () => {
   const { data } = usePatientAppointments()
-  console.log("data")
+  console.log("--data--", data)
   const { searchTerm, setSearchTerm, sortOrder, setSortOrder } =
-    useAppointmentsData(data || [])
+    useAppointmentsData(data.pastAppointments || [])
 
-  if (data.length === 0) return <div className="p-4">No appointments found</div>
+  if (data.pastAppointments.length === 0)
+    return <div className="p-4">No appointments found</div>
 
   return (
     <div className="p-4 w-full">

@@ -9,9 +9,9 @@ import toast from "react-hot-toast"
 function AppointmentForm() {
   const { data, loading, error } = useDoctors()
   const {
-    data: appointmentData,
+    data: _appointmentData,
     loading: appointmentLoading,
-    error: appointmentError,
+    error: _appointmentError,
     createAppointment,
   } = useCreateAppointment()
   const {
