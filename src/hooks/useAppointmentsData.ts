@@ -20,20 +20,6 @@ export const useAppointmentsData = (appointments: Appointment[]) => {
       )
     }
 
-    // result = result.sort((a, b) => {
-    //   if (sortOrder === "asc") return a.start_date.localeCompare(b.start_date)
-    //   if (sortOrder === "desc") return b.start_date.localeCompare(a.start_date)
-    //   if (sortOrder === "newest")
-    //     return (
-    //       new Date(b.start_date).getTime() - new Date(a.start_date).getTime()
-    //     )
-    //   if (sortOrder === "oldest")
-    //     return (
-    //       new Date(a.start_date).getTime() - new Date(b.start_date).getTime()
-    //     )
-    //   return 0
-    // })
-
     return result
   }, [appointments, searchTerm, sortOrder])
 

@@ -1,7 +1,7 @@
 import AboutUs from "../components/bookings/AboutUs"
 import DoctorInformation from "../components/bookings/DoctorInformation"
-import DoctorsDetails from "../components/cards/Cards"
 import Header from "../components/bookings/Header"
+import DoctorsDetails from "../components/cards/Cards"
 import { doctorsDetails } from "../data/data"
 
 function Bookings() {
