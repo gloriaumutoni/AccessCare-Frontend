@@ -5,7 +5,7 @@ export default () => {
   const token = getAuthToken()
   const [{ data, loading, error }, createAppointment] = useAxios(
     {
-      url: "http://localhost:3000/appointment",
+      url: "https://accesscare-backend-production.up.railway.app/appointment",
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

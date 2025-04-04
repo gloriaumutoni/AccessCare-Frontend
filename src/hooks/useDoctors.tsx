@@ -5,7 +5,7 @@ import getAuthToken from "../utils/auth"
 export default () => {
   const token = getAuthToken()
   const [{ data, loading, error }] = useAxios<User[]>({
-    url: "http://localhost:3000/appointment/doctors",
+    url: "https://accesscare-backend-production.up.railway.app/appointment/doctors",
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,

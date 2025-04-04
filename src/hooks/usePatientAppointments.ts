@@ -16,7 +16,7 @@ export default () => {
 
   const getPatientAppointments = async () => {
     const response = await axiosInstance.get(
-      "http://localhost:3000/appointment/appointments-history",
+      "https://accesscare-backend-production.up.railway.app/appointment/appointments-history",
     )
     setPatientAppointments(response.data)
   }

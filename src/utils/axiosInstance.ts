@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios"
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://accesscare-backend-production.up.railway.app",
 })
 
 axiosInstance.interceptors.request.use(
