@@ -5,7 +5,7 @@ export default () => {
   const token = getAuthToken()
   const [{ data, loading, error }, createAppointment] = useAxios(
     {
-      url: "https://accesscare-backend-production.up.railway.app/appointment",
+      url: import.meta.env.VITE_APP_URL + "/appointment",
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

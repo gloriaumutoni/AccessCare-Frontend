@@ -3,7 +3,7 @@ import useAxios from "axios-hooks"
 export default () => {
   const [{ data, loading, error }, register] = useAxios(
     {
-      url: "https://accesscare-backend-production.up.railway.app/auth/signup",
+      url: import.meta.env.VITE_APP_URL + "/auth/signup",
       method: "POST",
     },
     { manual: true },

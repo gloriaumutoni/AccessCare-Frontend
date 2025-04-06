@@ -5,7 +5,7 @@ import getAuthToken from "../utils/auth"
 export default () => {
   const token = getAuthToken()
   const [{ data, loading, error }] = useAxios<User[]>({
-    url: "https://accesscare-backend-production.up.railway.app/user",
+    url: import.meta.env.VITE_APP_URL + "/user",
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,

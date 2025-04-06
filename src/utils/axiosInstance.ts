@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios"
 
 const axiosInstance = axios.create({
-  baseURL: "https://accesscare-backend-production.up.railway.app",
+  baseURL: import.meta.env.VITE_APP_URL,
 })
 
 axiosInstance.interceptors.request.use(
